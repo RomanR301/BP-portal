@@ -1,0 +1,100 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.filters {
+  background: $lightGrey;
+  padding: 76px 0 50px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 50px 0;
+  }
+  &-container {
+    min-height: calc(100vh - 220px);
+  }
+  &-result {
+    padding-top: 70px;
+    @media (max-width: $breakpoint-md) {
+      padding-top: 35px;
+    }
+    &-title {
+      margin-bottom: 22px;
+      font-size: 18px;
+      font-weight: 700;
+      & span {
+        color: $lightBlue;
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
+    &__item {
+      border: 1px solid #D1D1D1;
+      padding: 25px;
+      margin-bottom: 30px;
+      & .line {
+        margin: 24px 0;
+      }
+    }
+    &__content {
+      position: relative;
+    }
+    &__image {
+      filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.1));
+      width: 80px;
+      height: 80px;
+      // border-radius: 100%;
+      // overflow: hidden;
+      margin-bottom: 20px;
+      & img {
+        border-radius: 100%;
+        @include defaultIcon(contain);
+      }
+    }
+    &__title {
+      color: $darkBlue;
+      font-weight: 700;
+    }
+    &__subtitle {
+      font-size: 14px;
+      color: $lightBlue;
+    }
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+      @include text-ellipsis(5);
+    } 
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 25px;
+      height: 36px;
+    }
+  }  
+}
+
+.filters-result__link {
+  position: absolute;
+  color: $lightBlue;
+  display: flex;
+  align-items: center;
+  top: 28px;
+  right: 0;
+  font-size: 14px;
+  &:before {
+    content: '';
+    background-image: url('../img/arrow-right-circle.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    margin-right: 6px;
+    @include transition(.3);
+  }
+  &:hover {
+    &:before {
+      transform: translate(2px, 0);
+    }
+  }
+}

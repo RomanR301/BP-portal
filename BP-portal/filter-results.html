@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>BridgePoint Portal | Expert Search</title>
+</head>
+
+
+<body>
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row d-flex align-justify align-middle">
+        <a href="index.html" class="header-logo">
+          <img src="./img/main-logo.svg" alt="">
+        </a>
+        <div class="navbar">
+          <ul class="menu d-flex">
+            <li class="menu-item">
+              <a href="#">Home</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Account Overview</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Pending Requests</a>
+            </li>
+            <li class="menu-item menu-item-has-child">
+              <a href="#">Submit Request</a>
+              <ul class="sub-menu">
+                <li class="menu-item">
+                  <a href="#">Plaintiff Financing</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Disbursement Financing</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Expert Search</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Case Status Update</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Reports</a>
+            </li>
+          </ul>
+          <div class="header-user menu-item-has-child">
+            <img src="./img/user-profile.svg" alt="">
+            <ul class="sub-menu">
+              <li class="menu-item">
+                <a href="#">Account</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Contact Support</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="body-padding"></div>
+<main class="filters-container">
+  <section class="filters">
+    <div class="container">
+      <div class="row">
+        <div class="search-component">
+          <form action="">
+            <h2>Expert Search</h2>
+            <p>Access our database of hundreds of top professionals across Canada.</p>
+            <div class="search-component-fields">
+              <div class="search-component-text form-control">
+                <i class="icon-icon-search"></i>
+                <input type="search" name="search" placeholder="Search by specialty or expert’s name">
+              </div>
+              <div class="search-component-select form-select">
+                <i class="icon-icon-marker"></i>
+                <select name="search-province">
+                  <option selected>Province Licensed</option>
+                  <option value="Alberta">Alberta</option>
+                  <option value="British Columbia">British Columbia</option>
+                  <option value="Manitoba">Manitoba</option>
+                  <option value="New Brunswick">New Brunswick</option>
+                  <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                  <option value="Nova Scotia">Nova Scotia</option>
+                  <option value="Ontario">Ontario</option>
+                  <option value="Prince Edward Island">Prince Edward Island</option>
+                  <option value="Quebec">Quebec</option>
+                  <option value="Saskatchewan">Saskatchewan</option>
+                  <option value="Northwest Territories">Northwest Territories</option>
+                  <option value="Nunavut">Nunavut</option>
+                  <option value="Yukon">Yukon</option>
+                </select>
+              </div>
+              <!-- <button type="submit" class="btn btn-primary search-component-button">Search</button> -->
+              <button type="submit" class="btn btn-primary search-component-button">Search</button>
+            </div>
+            <div class="search-component-filters">
+              <div class="filters-sort">
+                <label for="">Sort by:</label>
+                <div class="form-select">
+                  <select name="">
+                    <option value="AtoZ" selected>Alphabetical: A to Z</option>
+                    <option value="ZtoA">Alphabetical: Z to A</option>
+                  </select>
+                </div>
+              </div>
+              <div class="filters-toggler">
+                <label for="direct_to_expert_only">Direct to Expert Only</label>
+                <label class="switch" for="direct_to_expert_only">
+                  <input type="checkbox" id="direct_to_expert_only" />
+                  <div class="slider round"></div>
+                </label>
+              </div>
+              <div class="filters-toggler">
+                <label for="virtual_assessment_capabilities">Virtual Assessment Capabilities</label>
+                <label class="switch" for="virtual_assessment_capabilities">
+                  <input type="checkbox" id="virtual_assessment_capabilities" />
+                  <div class="slider round"></div>
+                </label>
+              </div>
+              <div class="filters-reset">
+                <button class="btn-link">Clear All</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="filters-result">
+    <div class="container">
+      <div class="row">
+        <div class="filters-result-title">
+          <span>10</span> Expert Search Results
+        </div>
+      </div>
+      <div class="row m-0">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <div class="filters-result__image">
+                <img src="./img/filters-item-image-company.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                AssessMed Inc.
+              </div>
+              <div class="filters-result__subtitle">
+                Short company description
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-company.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <a class="filters-result__link" href="#">
+                Direct to Expert
+              </a>
+              <div class="filters-result__image">
+                <img src="./img/person1.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                Dr. Missy Yeboah 
+              </div>
+              <div class="filters-result__subtitle">
+                Short description or title
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-expert.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <div class="filters-result__image">
+                <img src="./img/filters-item-image-company.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                AssessMed Inc.
+              </div>
+              <div class="filters-result__subtitle">
+                Short company description
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-company.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <a class="filters-result__link" href="#">
+                Direct to Expert
+              </a>
+              <div class="filters-result__image">
+                <img src="./img/person1.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                Dr. Missy Yeboah 
+              </div>
+              <div class="filters-result__subtitle">
+                Short description or title
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-expert.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <div class="filters-result__image">
+                <img src="./img/filters-item-image-company.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                AssessMed Inc.
+              </div>
+              <div class="filters-result__subtitle">
+                Short company description
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-company.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <a class="filters-result__link" href="#">
+                Direct to Expert
+              </a>
+              <div class="filters-result__image">
+                <img src="./img/person1.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                Dr. Missy Yeboah 
+              </div>
+              <div class="filters-result__subtitle">
+                Short description or title
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-expert.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <div class="filters-result__image">
+                <img src="./img/filters-item-image-company.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                AssessMed Inc.
+              </div>
+              <div class="filters-result__subtitle">
+                Short company description
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-company.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <a class="filters-result__link" href="#">
+                Direct to Expert
+              </a>
+              <div class="filters-result__image">
+                <img src="./img/person1.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                Dr. Missy Yeboah 
+              </div>
+              <div class="filters-result__subtitle">
+                Short description or title
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-expert.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <div class="filters-result__image">
+                <img src="./img/filters-item-image-company.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                AssessMed Inc.
+              </div>
+              <div class="filters-result__subtitle">
+                Short company description
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-company.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 column">
+          <div class="filters-result__item">
+            <div class="filters-result__content">
+              <a class="filters-result__link" href="#">
+                Direct to Expert
+              </a>
+              <div class="filters-result__image">
+                <img src="./img/person1.png" alt="">
+              </div>
+              <div class="filters-result__title">
+                Dr. Missy Yeboah 
+              </div>
+              <div class="filters-result__subtitle">
+                Short description or title
+              </div>
+              <div class="line"></div>
+              <div class="filters-result__text">
+                Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                dolendipicid quatum volore cuscita temqui ad erferci aspit pore conserum qui nus et lacepero bea con
+                es cupta dolupta tiasped qui nonsequae.
+              </div>
+            </div>
+            <a href="profile-expert.html" class="filters-result__button btn btn-primary">View Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="line"></div>
+    </div>
+    <div class="row d-flex align-middle">
+      <p class="footer-copyright">
+        Copyright © 2020 BridgePoint Financial Service Inc. All rights reserved. 
+      </p>
+      <ul class="footer-menu">
+        <li class="menu-item">
+          <a href="#">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#">
+            Terms of Use
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#">
+            Use of Cookies
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#">
+            Site Map
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+
+<script src="js/libs.min.js"></script>
+<script src="js/script.min.js"></script>
+
+</body>
+</html>

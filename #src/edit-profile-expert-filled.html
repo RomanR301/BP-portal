@@ -1,0 +1,224 @@
+@@include('_header.html')
+<main class="edit-page edit-expert edit-page-filled">
+  <section class="edit-profile">
+    <form action="">
+      <div class="container">
+        <div class="row">
+          <div class="edit-profile__heading">
+            <h1 class="section-title">Edit Expert Profile</h1>
+          </div>
+        </div>
+        <div class="row m-0">
+          <div class="col-lg-6 col-xs-12 column">
+            <div class="edit-profile__main">
+              <div class="edit-profile__avatar">
+                <div class="avatar-wrapper">
+                  <img class="profile-pic" src="./img/person1.png" />
+                  <div class="upload-button">
+                  </div>
+                  <input class="file-upload" type="file" accept="image/*" />
+                </div>
+                <div class="edit-profile-image-btn">
+                  Edit profile image
+                </div>
+              </div>
+              <fieldset>
+                <div class="form-group">
+                  <label for="expert_first_name">First Name</label>
+                  <p>Missy</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_last_name">Last Name</label>
+                  <p>Yeboah</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_title">Short description or title</label>
+                  <p>Experienced Neurologist</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_about">About (up to XXX characters)</label>
+                  <p>Mus vendessim quissec tatibus sum sunt vellaborepe eatur magnist, sit enis esectes tionseque quis
+                    dolendipicid quatum volore cuscita temqui ad erferci aspite pore conserum qui nus et lacepero bea
+                    con es cupta dolupta tiasped qui nonsequae. Uptat dolorem. Nequi untotae inis es as ea vendios aut
+                    ex et asi doloreicto tem num facias quam quo consequ iaerit et as hit ra ni ommolor empore cus aut
+                    as autecup tintus incilia quodisitium harum incita perum imusant etusam, soluptatem idit quibus,
+                    apietur, conecusam re volorios miligentem veliqui ssimi.</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_qualifications">Accreditation & Qualifications</label>
+                  <p>ABC, DEF, GHI, JKL</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_specialities">Specialities</label>
+                  <p>Neurology</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_subspecialities">Sub Specialities</label>
+                  <p>Spine</p>
+                </div>
+                <div class="form-group">
+                  <div class="tags-list">
+                    <div class="tags__item">
+                      <div class="tags__remove">
+                        <span>+</span>
+                      </div>
+                      <span>Concussion</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="form-number">
+                    <div class="form-number__item">
+                      <label for="plaintiff_work">Plaintiff Work</label>
+                      <span>
+                        <p>37</p>
+                      </span>
+                    </div>
+                    <div class="form-number__item">
+                      <label for="defence_work">Defence Work</label>
+                      <span>
+                        <p>63</p>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-checkbox">
+                    <div class="filters-toggler">
+                      <label for="qualified_by_courts">Qualified by Courts</label>
+                      <label class="switch" for="qualified_by_courts">
+                        <input type="checkbox" id="qualified_by_courts" checked />
+                        <div class="slider round"></div>
+                      </label>
+                    </div>
+                    <div class="filters-toggler">
+                      <label for="trial_experience">Trial Experience</label>
+                      <label class="switch" for="trial_experience">
+                        <input type="checkbox" id="trial_experience" checked />
+                        <div class="slider round"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-button">
+                  <div class="form-button__item">
+                    <label for="file_sample_report" class="btn-file btn-lightBlue">Upload Sample Report
+                      <input type="file" class="input-file" name="file_sample_report" id="file_sample_report">
+                    </label>
+                    <span class="filename">missy-yeboah-sample-report.pdf</span>
+                  </div>
+                  <div class="form-button__item">
+                    <label for="file_cv" class="btn-file btn-darkBlue">Upload CV
+                      <input type="file" class="input-file" name="file_cv" id="file_cv">
+                    </label>
+                    <span class="filename">missy-yeboah-cv.pdf</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="expert_provinces">Provinces Licensed to Practice</label>
+                  <p>Type to add</p>
+                </div>
+                <div class="form-group">
+                  <div class="tags-list">
+                    <div class="tags__item">
+                      <div class="tags__remove">
+                        <span>+</span>
+                      </div>
+                      <span>Ontario</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="expert_languages">Languages</label>
+                  <p>English</p>
+                </div>
+                <div class="form-group">
+                  <div class="tags-list">
+                    <div class="tags__item">
+                      <div class="tags__remove">
+                        <span>+</span>
+                      </div>
+                      <span>French</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="expert_regions_served">Region(s) Served</label>
+                  <p>Greater Toronto Area including Southwestern Ontario but available to travel.</p>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xs-12 column">
+            <div class="edit-profile__additional">
+              <fieldset>
+                <legend>Contact Information</legend>
+                <div class="form-group">
+                  <label for="expert_number">Phone Number</label>
+                  <p>416 544 3088</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_email">Email Address</label>
+                  <p>jensen@missyyeboah.com</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_website">Website</label>
+                  <p>https://www.missyyeboah.com</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_contact_person">Contact Person (if different than expert)</label>
+                  <p>Mike Jensen</p>
+                </div>
+              </fieldset>
+              <fieldset class="mt-20">
+                <legend>Primary Address</legend>
+                <div class="form-group">
+                  <label for="expert_address_1">Address 1</label>
+                 <p>1233 Adelaide St. W</p>
+                </div>
+                <div class="form-group">
+                  <label for="expert_address_2">Address 2</label>
+                 <p>&nbsp</p>
+                </div>
+                <div class="form-group-multiple">
+                  <div class="form-group">
+                    <label for="expert_city">City</label>
+                    <p>Toronto</p>
+                  </div>
+                  <div class="form-group form-select">
+                    <label for="expert_province">Province</label>
+                    <select name="expert_province" id="expert_province">
+                      <option value="ON" selected>ON</option>
+                      <option value="AB">AB</option>
+                      <option value="BC">BC</option>
+                      <option value="MB">MB</option>
+                      <option value="NB">NB</option>
+                      <option value="NL">NL</option>
+                      <option value="NT">NT</option>
+                      <option value="NS">NS</option>
+                      <option value="NU">NU</option>
+                      <option value="ON">ON</option>
+                      <option value="PE">PE</option>
+                      <option value="QC">QC</option>
+                      <option value="SK">SK</option>
+                      <option value="YT">YT</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="expert_postal_code">Postal Code</label>
+                    <p>M5H 1R2</p>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="col-md-12 column">
+            <button type="submit" class="edit-profile__save btn btn-primary" id="edit-profile-save"
+              disabled="disabled">Save Profile</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+
+@@include('_footer.html')

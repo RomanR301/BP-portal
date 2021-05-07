@@ -1,0 +1,16 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.home-search {
+  background: $lightGrey;
+  min-height: calc(100vh - 118px);
+  @media (max-width: $breakpoint-lg) {
+    
+  }
+  & .search-component {
+    margin-top: 245px;
+    @media (max-width: $breakpoint-lg) {
+      margin-top: 50px;
+    }
+  }
+}

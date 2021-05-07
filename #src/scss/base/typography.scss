@@ -1,0 +1,51 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.--semibold {
+  font-weight: 600;
+}
+
+.--regular {
+  font-weight: 400;
+}
+
+.--medium {
+  font-weight: 500;
+}
+
+.--bold {
+  font-weight: 700;
+}
+
+.--uppercase {
+  text-transform: uppercase;
+}
+
+.heading-1 {
+  @include fontSize(24, 36);
+  line-height: 1.33;
+}
+
+.heading-2 {
+  @include fontSize(18, 24);
+  line-height: 1.33;
+}
+
+.heading-3 {
+  @include fontSize(14, 16);
+  line-height: 1.5;
+}
+
+.section-title {
+  color: $darkBlue;
+  font-size: 24px;
+  font-weight: 700;
+}

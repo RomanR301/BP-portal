@@ -1,0 +1,106 @@
+.search-component {
+  width: 100%;
+  & h2 {
+    font-size: 24px;
+    color: $darkBlue;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  & p {
+    @media (max-width: $breakpoint-md) {
+      font-size: 14px;
+    }
+  }
+  &-fields {
+    display: flex;
+    height: 60px;
+    margin-top: 37px;
+    @media (max-width: $breakpoint-lg) {
+      flex-direction: column;
+      height: unset;
+    }
+    & i {
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      transform: translate(0, -50%);
+      @media (max-width: $breakpoint-xl) {
+        left: 14px;
+      }
+    }
+  }
+  &-text{
+    width: 60%;
+    height: 100%;
+    @media (max-width: $breakpoint-lg) {
+      height: 50px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  &-select {
+    width: 30%;
+    height: 100%;
+    border-left: 2px solid #D1D1D1;
+    @media (max-width: $breakpoint-lg) {
+      height: 50px;
+      border-left: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  &-button {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    @media (max-width: $breakpoint-lg) {
+      height: 50px;
+      min-height: 50px;
+      width: 125px;
+    }
+  }
+  &-filters {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    @media (max-width: $breakpoint-xl) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 36px;
+    }
+    & .filters-sort {
+      width: 370px;
+      position: relative;
+      @media (max-width: $breakpoint-xl) {
+        width: 100%;
+        margin-bottom: 24px;
+      }
+      & label {
+        position: absolute;
+        top: -30px;
+        font-weight: 700;
+        @media (max-width: $breakpoint-xl) {
+          position: static;
+          margin-bottom: 8px;
+          display: block;
+        }
+      }
+      & .form-select {
+        height: 40px;
+      }
+      & select {
+        padding: 0 15px 0 24px;
+      }
+    }
+  }
+  & .filters-reset {
+    @media (max-width: $breakpoint-xl) {
+      margin-top: 10px;
+    }
+  }
+}

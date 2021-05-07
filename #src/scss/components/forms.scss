@@ -1,0 +1,311 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.form-control {
+  position: relative;
+  & input {
+    height: 100%;
+    width: 100%;
+    padding-left: 62px;
+    border-radius: 0;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: $defaultText;
+    border-radius: 0;
+    @media (max-width: $breakpoint-xl) {
+      padding: 0 40px;
+    }
+  }
+}
+
+.form-select {
+  position: relative;
+  & select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    // width: 100%;
+    // height: 100%;
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
+    padding-left: 62px;
+    border-radius: 0;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: $defaultText;
+    background: $whiteColor;
+    @media (max-width: $breakpoint-xl) {
+      padding: 0 40px;
+    }
+  }
+  &:after {
+    content: "\e900";
+    font-family: "icomoon";
+    color: $lightBlue;
+    position: absolute;
+    right: 26px;
+    top: 50%;
+    pointer-events: none;
+    transform: translate(0, -50%);
+    @media (max-width: $breakpoint-xl) {
+      right: 15px;
+    }
+  }
+}
+
+.filters-toggler {
+  display: flex;
+  align-items: center;
+  @media (max-width: $breakpoint-xl) {
+    margin-bottom: 20px;
+    flex-direction: row-reverse;
+  }
+  & label:first-child {
+    font-weight: 700;
+    margin-right: 20px;
+    @media (max-width: $breakpoint-xl) {
+      margin-left: 10px;
+    }
+    @media (max-width: $breakpoint-md) {
+      font-size: 14px;
+    }
+  }
+  .switch {
+    display: inline-block;
+    height: 30px;
+    position: relative;
+    width: 60px;
+  }
+
+  .switch input {
+    display: none;
+  }
+
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    background-color: #fff;
+    bottom: 3px;
+    content: "";
+    height: 24px;
+    left: 3px;
+    position: absolute;
+    transition: 0.4s;
+    width: 24px;
+  }
+
+  input:checked + .slider {
+    background-color: $lightBlue;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+  &-multiple {
+    display: flex;
+    flex-wrap: nowrap;
+    @media (max-width: $breakpoint-xl) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    & .form-group {
+      &:first-child {
+        width: 50%;
+        @media (max-width: $breakpoint-xl) {
+          width: 100%;
+        }
+      }
+      width: 23%;
+      margin: 0 10px 0 0;
+      @media (max-width: $breakpoint-xl) {
+        width: 47%;
+        margin: 0 0 20px 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    & select {
+      height: 45px;
+    }
+    & .form-select {
+      & select {
+        padding: 10px 28px 10px 10px;
+      }
+      &:after {
+        right: 12px;
+        top: 52px;
+      }
+    }
+  }
+  & label {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: #777777;
+  }
+  & input,
+  & textarea,
+  & select {
+    border: 1px solid #d1d1d1;
+    background: transparent;
+    padding: 10px 10px;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+  }
+  & textarea {
+  }
+}
+
+.form-group {
+  .form-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 54px 0 34px 0;
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0;
+    }
+    &__item {
+      width: 48%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: $breakpoint-md) {
+        margin: 0 0 20px 0;
+        width: 100%;
+        flex-direction: row-reverse;
+      }
+    }
+    & span {
+      width: 60px;
+      position: relative;
+      &:before {
+        content: "%";
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+    & input {
+      text-align: center;
+      padding: 10px 20px 10px 10px;
+    }
+    & label {
+      margin-bottom: 0;
+    }
+  }
+  .form-checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 54px;
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0px;
+    }
+    & .filters-toggler {
+      width: 48%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: $breakpoint-xl) {
+        flex-direction: row;
+      }
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+        flex-direction: row-reverse;
+        &:last-child {
+          margin-bottom: 15px;
+        }
+      }
+      @media (max-width: $breakpoint-xl) {
+        label {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.form-button {
+  margin-bottom: 55px;
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 30px;
+  }
+  & .form-button__item {
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  & .btn-file {
+    min-width: 220px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    margin-right: 20px;
+    @media (max-width: $breakpoint-md) {
+      margin: 0 0 10px 0;
+    }
+    & span {
+      cursor: pointer;
+    }
+  }
+  & .form-input {
+    height: 36px;
+    border: none;
+    user-select: none;
+    pointer-events: none;
+    outline: none;
+  }
+}
+
+.input-file {
+  position: absolute;
+  left: -9999px;
+}
+
+label[for="file-upload"] {
+  padding: 0.5em;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.filename {
+  display: block;
+  position: relative;
+  border-bottom: 1px solid #555555;
+  line-height: 1;
+}
+

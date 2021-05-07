@@ -1,0 +1,128 @@
+@@include('_header.html')
+<main class="edit-page edit-roster">
+  <section class="edit-profile">
+    <form action="">
+      <div class="container">
+        <div class="row">
+          <div class="edit-profile__heading">
+            <h1 class="section-title">Edit Expert Roster Profile</h1>
+          </div>
+        </div>
+        <div class="row m-0">
+          <div class="col-lg-6 col-xs-12 column">
+            <div class="edit-profile__main">
+              <div class="edit-profile__avatar">
+                <div class="avatar-wrapper">
+                  <img class="profile-pic" src="./img/expert-image.svg" />
+                  <div class="upload-button">
+                  </div>
+                  <input class="file-upload" type="file" accept="image/*" />
+                </div>
+                <div class="edit-profile-image-btn">
+                  Edit profile image
+                </div>
+              </div>
+              <fieldset>
+                <div class="form-group">
+                  <label for="roster_first_name">First Name</label>
+                  <input type="text" name="roster_first_name" id="roster_first_name">
+                </div>
+                <div class="form-group">
+                  <label for="roster_last_name">Last Name</label>
+                  <input type="text" name="roster_last_name" id="roster_last_name">
+                </div>
+                <div class="form-group">
+                  <label for="roster_qualifications">Accreditation & Qualifications</label>
+                  <input type="text" name="roster_qualifications" id="roster_qualifications">
+                </div>
+                <div class="form-group">
+                  <label for="roster_specilities">Specialities</label>
+                  <input type="text" name="roster_specilities" id="roster_specilities">
+                </div>
+                <div class="form-group">
+                  <label for="roster_sub_specilities">Sub Specialities</label>
+                  <input type="text" name="roster_sub_specilities" id="roster_sub_specilities" placeholder="i.e. Spine">
+                </div>
+                <div class="form-group">
+                  <label for="roster_about">About (up to XXX characters)</label>
+                  <textarea name="" id="roster_about" rows="10" name="roster_about"></textarea>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xs-12 column">
+            <div class="edit-profile__additional">
+              <fieldset>
+
+                <div class="form-group">
+                  <div class="form-number">
+                    <div class="form-number__item">
+                      <label for="roster_plaintiff_work">Plaintiff Work</label>
+                      <span>
+                        <input type="number" name="roster_plaintiff_work" id="roster_plaintiff_work">
+                      </span>
+                    </div>
+                    <div class="form-number__item">
+                      <label for="roster_defence_work">Defence Work</label>
+                      <span>
+                        <input type="number" name="roster_defence_work" id="roster_defence_work">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-checkbox">
+                    <div class="filters-toggler">
+                      <label for="roster_qualified_by_courts">Qualified by Courts</label>
+                      <label class="switch" for="roster_qualified_by_courts">
+                        <input type="checkbox" id="roster_qualified_by_courts" />
+                        <div class="slider round"></div>
+                      </label>
+                    </div>
+                    <div class="filters-toggler">
+                      <label for="roster_trial_experience">Trial Experience</label>
+                      <label class="switch" for="roster_trial_experience">
+                        <input type="checkbox" id="roster_trial_experience" />
+                        <div class="slider round"></div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-button">
+                  <div class="form-button__item">
+                    <label for="roster_file_sample_report" class="btn-file btn-lightBlue">Upload Sample Report
+                      <input type="file" class="input-file" name="roster_file_sample_report"
+                        id="roster_file_sample_report">
+                    </label>
+                    <span class="filename"></span>
+                  </div>
+                  <div class="form-button__item">
+                    <label for="roster_file_cv" class="btn-file btn-darkBlue">Upload CV
+                      <input type="file" class="input-file" name="roster_file_cv" id="roster_file_cv">
+                    </label>
+                    <span class="filename"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="roster_provinces">Provinces Licensed to Practice</label>
+                  <input type="text" name="roster_provinces" id="roster_provinces">
+                </div>
+                <div class="form-group">
+                  <label for="roster_languages">Languages</label>
+                  <input type="text" name="roster_languages" id="roster_languages">
+                </div>
+              </fieldset>
+
+            </div>
+          </div>
+          <div class="col-md-12 column">
+            <div class="edit-roster__buttons">
+              <button type="submit" class="edit-profile__save btn btn-primary" id="edit-profile-save" disabled="disabled">Save Profile</button>
+              <a href="#" class="edit-profile__save btn btn-primary">Company Page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+
+@@include('_footer.html')
