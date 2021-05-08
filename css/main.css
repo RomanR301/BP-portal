@@ -83,7 +83,7 @@ video {
   border: 0;
   font-size: 100%;
   font-family: Arial, sans-serif;
-  color: #555555;
+  color: #333333;
   font-weight: 400;
   vertical-align: baseline;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -92,7 +92,7 @@ video {
 body {
   position: relative;
   background: #ffffff;
-  color: #555555;
+  color: #333333;
   font-family: Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -269,17 +269,23 @@ main {
   height: 18px;
 }
 
+.icon-pencil {
+  background-image: url("../img/icon-pencil.png");
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.icon-arrow {
+  background-image: url("../img/icon-arrow.png");
+  width: 11px;
+  height: 11px;
+}
+
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 0 15px;
-}
-
-@media (max-width: 767px) {
-  .container {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 }
 
 .container-fluid {
@@ -834,62 +840,75 @@ main {
   }
 }
 
-table {
+.form-group {
   width: 100%;
+  position: relative;
 }
 
-table th {
-  font-size: 16px;
-  color: #014f82;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  font-family: inherit;
+  color: #333333;
+  font-size: inherit;
+  line-height: 1;
+  padding: 10px 50px 10px 14px;
+  border: 1px solid #d1d1d1;
+}
+
+.form-group input::-webkit-input-placeholder,
+.form-group textarea::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 1;
+}
+
+.form-group input:-ms-input-placeholder,
+.form-group textarea:-ms-input-placeholder {
+  color: #333333;
+  opacity: 1;
+}
+
+.form-group input::-ms-input-placeholder,
+.form-group textarea::-ms-input-placeholder {
+  color: #333333;
+  opacity: 1;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #333333;
+  opacity: 1;
+}
+
+.form-group input:-ms-input-placeholder,
+.form-group textarea:-ms-input-placeholder {
+  color: #333333;
+}
+
+.form-group input::-ms-input-placeholder,
+.form-group textarea::-ms-input-placeholder {
+  color: #333333;
+}
+
+.form-group textarea {
+  line-height: 1.5;
+}
+
+.form-group button[type="submit"] {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+label {
+  margin-bottom: 13px;
   font-weight: 700;
-  padding-bottom: 8px;
-}
-
-table th,
-table td {
-  text-align: left;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-table td {
-  padding-bottom: 20px;
-}
-
-thead {
-  border-bottom: 3px solid #f6f6f6;
-}
-
-tbody tr:first-child td {
-  padding-top: 30px;
-}
-
-tbody tr:last-child td {
-  padding-bottom: 30px;
-  border-bottom: 1px solid #d1d1d1;
-}
-
-tfoot td {
-  padding-top: 24px;
-  font-weight: 700;
-}
-
-.account-overview table th,
-.account-overview table td {
-  width: 20%;
-}
-
-.account-overview table a {
-  white-space: nowrap;
-  margin-left: 25px;
-  color: #009ade;
-  border-bottom: 2px solid #009ade;
-  transition: all 0.3s ease-out;
-}
-
-.account-overview table a:hover {
-  border-color: transparent;
+  display: inline-block;
 }
 
 .header {
@@ -904,24 +923,9 @@ tfoot td {
   max-width: 1440px;
 }
 
-@media (max-width: 991px) {
-  .header {
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-  }
-}
-
 .header-logo {
   display: flex;
   width: 260px;
-}
-
-@media (max-width: 991px) {
-  .header-logo {
-    width: 200px;
-  }
 }
 
 .header-logo img {
@@ -958,12 +962,6 @@ tfoot td {
   right: 0;
 }
 
-@media (max-width: 991px) {
-  .header .menu-item-has-child {
-    margin: 10px 0 0 0;
-  }
-}
-
 .sub-menu {
   border: 1px solid #d1d1d1;
   position: absolute;
@@ -977,14 +975,6 @@ tfoot td {
   visibility: hidden;
   transition: all 0.3s ease-out;
   z-index: 22;
-}
-
-@media (max-width: 991px) {
-  .sub-menu {
-    right: unset;
-    left: 0;
-    text-align: left;
-  }
 }
 
 .sub-menu.active {
@@ -1034,22 +1024,6 @@ tfoot td {
   z-index: 101;
 }
 
-@media (max-width: 991px) {
-  .navbar {
-    position: fixed;
-    width: 100%;
-    top: 94px;
-    right: -120vw;
-    background: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-out;
-    padding: 10px 10px 20px 10px;
-  }
-}
-
 .navbar.active {
   right: 0;
 }
@@ -1058,36 +1032,14 @@ tfoot td {
   margin-right: 15px;
 }
 
-@media (max-width: 991px) {
-  .menu {
-    margin-right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-}
-
 .menu-item {
   margin: 0 10px;
-}
-
-@media (max-width: 991px) {
-  .menu-item {
-    margin: 10px 0;
-  }
 }
 
 .menu-item a {
   display: block;
   position: relative;
   transition: all 0.3s ease-out;
-}
-
-@media (max-width: 991px) {
-  .menu-item a {
-    font-size: 18px;
-  }
 }
 
 .menu-item a:before {
@@ -1117,12 +1069,6 @@ tfoot td {
   margin-right: -15px;
   position: relative;
   z-index: 102;
-}
-
-@media (max-width: 991px) {
-  .hamburger {
-    display: block;
-  }
 }
 
 .hamburger span {
@@ -1192,18 +1138,18 @@ tfoot td {
   font-size: 18px;
   position: relative;
   display: block;
-  margin-right: 30px;
   line-height: 1;
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 2px solid #333333;
 }
 
-.footer-menu a:before {
-  content: "";
-  position: absolute;
-  right: -15px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: #555555;
+.footer-menu a:hover {
+  text-decoration: underline;
+}
+
+.footer-menu li:last-child a {
+  border: none;
 }
 
 .footer-copyright {
@@ -1261,7 +1207,7 @@ tfoot td {
 }
 
 .account-overview-additional a {
-  border-bottom: 1px solid #555555;
+  border-bottom: 1px solid #333333;
   display: inline-block;
   transition: all 0.3s ease-out;
   line-height: 1.2;
@@ -1279,20 +1225,364 @@ tfoot td {
   border-color: #014f82;
 }
 
-.account-overview__search {
-  width: 60%;
-}
-
 .account-overview__search .btn-primary {
   margin-top: 20px;
-}
-
-.account-overview__resources {
-  width: 25%;
 }
 
 .account-overview__resources a {
   margin-bottom: 12px;
   display: inline-block;
+}
+
+.account-overview form {
+  margin-bottom: 45px;
+}
+
+.account-overview .table-sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.account-overview .table-sort span {
+  font-size: 14px;
+}
+
+.account-overview .table-sort p {
+  font-size: 14px;
+  color: #009ade;
+  font-weight: 700;
+}
+
+.law-firm-account .table th {
+  cursor: pointer;
+}
+
+.law-firm-account .table tr:last-child td {
+  padding-bottom: 0;
+  border: none;
+}
+
+.law-firm-account .table th:first-child,
+.law-firm-account .table td:first-child {
+  width: 20%;
+}
+
+.law-firm-account .table th:nth-child(2),
+.law-firm-account .table td:nth-child(2) {
+  width: 20%;
+}
+
+.law-firm-account .table th:nth-child(3),
+.law-firm-account .table td:nth-child(3) {
+  width: 40%;
+  padding-left: 80px;
+}
+
+.law-firm-account .table th:nth-child(3) p,
+.law-firm-account .table td:nth-child(3) p {
+  display: inline-block;
+  width: 200px;
+}
+
+.law-firm-account .table th:nth-child(4),
+.law-firm-account .table td:nth-child(4) {
+  width: 40%;
+}
+
+.table {
+  width: 100%;
+}
+
+.table th {
+  font-size: 16px;
+  color: #014f82;
+  font-weight: 700;
+  padding-bottom: 8px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-right: 10px;
+}
+
+.table td {
+  padding-bottom: 20px;
+}
+
+.table thead {
+  border-bottom: 3px solid #f6f6f6;
+}
+
+.table tbody tr:first-child td {
+  padding-top: 30px;
+}
+
+.table tbody tr:last-child td {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.table tfoot td {
+  padding-top: 24px;
+  font-weight: 700;
+}
+
+.account-overview table th,
+.account-overview table td {
+  width: 20%;
+}
+
+.account-overview table a {
+  white-space: nowrap;
+  margin-left: 25px;
+  color: #009ade;
+  border-bottom: 2px solid #009ade;
+  transition: all 0.3s ease-out;
+}
+
+.account-overview table a:hover {
+  border-color: transparent;
+}
+
+@media (max-width: 992px) {
+  main {
+    margin-top: 30px;
+    min-height: auto;
+  }
+  .body-padding {
+    height: 90px;
+  }
+  .header {
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+  .header .d-flex {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-logo {
+    width: 200px;
+  }
+  .header-notifications {
+    margin: 10px 0;
+  }
+  .header .menu-item-has-child {
+    margin: 10px 0 0 0;
+  }
+  .header .menu {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .header .menu-item {
+    margin: 10px 0;
+  }
+  .header .menu-item a {
+    font-size: 18px;
+  }
+  .navbar {
+    position: fixed;
+    width: 100%;
+    top: 94px;
+    right: -120vw;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-out;
+    padding: 10px 10px 20px 10px;
+  }
+  .sub-menu {
+    right: unset;
+    left: 0;
+    text-align: left;
+  }
+  .hamburger {
+    display: block;
+  }
+  .law-firm-account .table th:first-child,
+  .law-firm-account .table td:first-child {
+    width: 16%;
+  }
+  .law-firm-account .table th:nth-child(3),
+  .law-firm-account .table td:nth-child(3) {
+    width: 34%;
+    padding-left: 0;
+  }
+  .account-overview-additional {
+    padding: 30px 0;
+  }
+  .account-overview__search {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading-1 {
+    font-size: 24px;
+  }
+  .heading-2 {
+    font-size: 20px;
+  }
+  .footer {
+    margin-top: 30px;
+  }
+  .footer-menu a {
+    margin-right: 6px;
+    padding-right: 6px;
+    font-size: 14px;
+  }
+  .account-overview .tabs {
+    margin: 30px 0 50px 0;
+  }
+  .tabs-list {
+    margin-bottom: 30px;
+    flex-direction: column;
+    border: none;
+    padding: 0 0 0 50px;
+  }
+  .tabs-list__item {
+    margin: 0 0 15px 0;
+  }
+  .tabs-list__item_link {
+    font-size: 16px;
+    margin: 0;
+  }
+  .tabs-list__item_link:before, .tabs-list__item_link:after {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    width: 40px;
+    height: 3px;
+  }
+  .tabs-list__item_link:before {
+    background: #009ade;
+    z-index: 1;
+  }
+  .tabs-list__item_link:after {
+    background: #f6f6f6;
+  }
+  .table thead {
+    border: none;
+  }
+  .account-overview form {
+    margin-bottom: 0;
+  }
+  .account-overview form .col-xs-12 {
+    margin-bottom: 20px;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table,
+  .table tbody,
+  .table td,
+  .table th,
+  .table thead,
+  .table tr {
+    display: block;
+  }
+  .law-firm-account .table td:nth-child(3) {
+    display: flex;
+  }
+  .table td {
+    border: none;
+    position: relative;
+    padding-left: 158px;
+  }
+  .table td:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    width: 110px;
+    font-size: 13px;
+    padding-right: 10px;
+    color: #777;
+    white-space: nowrap;
+    content: attr(data-column);
+  }
+  .table td:after {
+    content: ":";
+    position: absolute;
+    left: 90px;
+    color: #777;
+    font-size: 17px;
+    top: 49%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  .account-overview table td {
+    width: 100%;
+    line-height: 1.4;
+  }
+  .table tbody tr:first-child td {
+    padding: 5px 10px 5px 110px;
+  }
+  .table tbody tr:last-child td {
+    padding: 5px 10px 5px 110px;
+  }
+  .table tbody td {
+    padding: 5px 10px 5px 110px;
+  }
+  .table tbody tr:last-child td {
+    border: none;
+  }
+  .table tbody tr {
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+  .table tfoot td {
+    padding: 5px 10px 5px 110px;
+  }
+  .table tfoot td:first-child:after {
+    display: none;
+  }
+  .law-firm-account .table td:nth-child(3) {
+    padding: 5px 10px 5px 110px;
+  }
+  .law-firm-account .table td {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-menu a {
+    margin: 0 0 10px 0;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid #333333;
+  }
+  .footer-menu a:hover {
+    text-decoration: none;
+  }
+  .footer-menu li:last-child a {
+    border-bottom: 1px solid #333333;
+  }
+  .account-overview table a {
+    margin-left: 15px;
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

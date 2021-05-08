@@ -46,7 +46,7 @@ $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1800px;
 
 $whiteColor: #ffffff;
-$defaultText: #555555;
+$defaultText: #333333;
 $lightGrey: #f6f6f6;
 $blackColor: #000000;
 $lightBlue: #009ade;
@@ -311,16 +311,23 @@ main {
     width: 18px;
     height: 18px;
   }
+  &-pencil {
+    background-image: url("../img/icon-pencil.png");
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+  }
+  &-arrow {
+    background-image: url("../img/icon-arrow.png");
+    width: 11px;
+    height: 11px;
+  }
 }
 // GRID
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 0 15px;
-  @media (max-width: $breakpoint-md) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 }
 .container-fluid {
   width: 100%;
@@ -518,66 +525,49 @@ main {
     opacity: 1;
   }
 }
-// TABLE STYLES
-table {
+// FORMS
+.form-group {
   width: 100%;
-  & th {
-    font-size: 16px;
-    color: $darkBlue;
-    font-weight: 700;
-    padding-bottom: 8px;
-  }
-  & th,
-  & td {
-    text-align: left;
-    width: fit-content;
-  }
-  & td {
-    padding-bottom: 20px;
-  }
-}
-thead {
-  border-bottom: 3px solid #f6f6f6;
-}
-tbody {
-  & tr:first-child {
-    td {
-      padding-top: 30px;
+  position: relative;
+  & input,
+  & textarea {
+    width: 100%;
+    font-family: inherit;
+    color: $defaultText;
+    font-size: inherit;
+    line-height: 1;
+    padding: 10px 50px 10px 14px;
+    border: 1px solid #d1d1d1;
+    &::placeholder {
+      color: $defaultText;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      color: $defaultText;
+    }
+    &::-ms-input-placeholder {
+      color: $defaultText;
     }
   }
-  & tr:last-child {
-    td {
-      padding-bottom: 30px;
-      border-bottom: 1px solid #d1d1d1;
-    }
+  & textarea {
+    line-height: 1.5;
+  }
+  & button[type="submit"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
   }
 }
-tfoot {
-  & td {
-    padding-top: 24px;
-    font-weight: 700;
-  }
+label {
+  margin-bottom: 13px;
+  font-weight: 700;
+  display: inline-block;
 }
-
-.account-overview {
-  & table {
-    & th,
-    td {
-      width: 20%;
-    }
-    & a {
-      white-space: nowrap;
-      margin-left: 25px;
-      color: $lightBlue;
-      border-bottom: 2px solid $lightBlue;
-      @include transition(0.3);
-      &:hover {
-        border-color: transparent;
-      }
-    }
-  }
-}
-
 // HEADER
 .header {
   background: $whiteColor;
@@ -588,18 +578,9 @@ tfoot {
   & .container {
     max-width: 1440px;
   }
-  @media (max-width: $breakpoint-lg) {
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-  }
   &-logo {
     display: flex;
     width: 260px;
-    @media (max-width: $breakpoint-lg) {
-      width: 200px;
-    }
     & img {
       @include defaultIcon(contain);
     }
@@ -626,12 +607,8 @@ tfoot {
       margin-left: 5px;
       right: 0;
     }
-    @media (max-width: $breakpoint-lg) {
-      margin: 10px 0 0 0;
-    }
   }
 }
-
 .sub-menu {
   border: 1px solid #d1d1d1;
   position: absolute;
@@ -645,11 +622,6 @@ tfoot {
   visibility: hidden;
   @include transition(0.3);
   z-index: 22;
-  @media (max-width: $breakpoint-lg) {
-    right: unset;
-    left: 0;
-    text-align: left;
-  }
   &.active {
     opacity: 1;
     visibility: visible;
@@ -691,44 +663,18 @@ tfoot {
   display: flex;
   align-items: center;
   z-index: 101;
-  @media (max-width: $breakpoint-lg) {
-    position: fixed;
-    width: 100%;
-    top: 94px;
-    right: -120vw;
-    background: $whiteColor;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-    @include transition(0.3);
-    padding: 10px 10px 20px 10px;
-  }
   &.active {
     right: 0;
   }
 }
 .menu {
   margin-right: 15px;
-  @media (max-width: $breakpoint-lg) {
-    margin-right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
   &-item {
     margin: 0 10px;
-    @media (max-width: $breakpoint-lg) {
-      margin: 10px 0;
-    }
     & a {
       display: block;
       position: relative;
       @include transition(0.3);
-      @media (max-width: $breakpoint-lg) {
-        font-size: 18px;
-      }
       &:before {
         content: "";
         position: absolute;
@@ -756,9 +702,6 @@ tfoot {
   margin-right: -15px;
   position: relative;
   z-index: 102;
-  @media (max-width: $breakpoint-lg) {
-    display: block;
-  }
   & span {
     position: absolute;
     right: 15px;
@@ -815,17 +758,16 @@ tfoot {
       font-size: 18px;
       position: relative;
       display: block;
-      margin-right: 30px;
       line-height: 1;
-      &:before {
-        content: "";
-        position: absolute;
-        right: -15px;
-        top: 0;
-        width: 2px;
-        height: 100%;
-        background: $defaultText;
+      margin-right: 15px;
+      padding-right: 15px;
+      border-right: 2px solid $defaultText;
+      &:hover {
+        text-decoration: underline;
       }
+    }
+    & li:last-child a {
+      border: none;
     }
   }
   &-copyright {
@@ -854,7 +796,6 @@ tfoot {
     }
   }
 }
-
 // ACCOUNT OVERVIEW SCREEN
 .account-overview {
   & .tabs {
@@ -894,16 +835,363 @@ tfoot {
     }
   }
   &__search {
-    width: 60%;
     & .btn-primary {
       margin-top: 20px;
     }
   }
   &__resources {
-    width: 25%;
     & a {
       margin-bottom: 12px;
       display: inline-block;
     }
+  }
+  & form {
+    margin-bottom: 45px;
+  }
+  & .table-sort {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 26px;
+    & span {
+      font-size: 14px;
+    }
+    & p {
+      font-size: 14px;
+      color: $lightBlue;
+      font-weight: 700;
+    }
+  }
+}
+.law-firm-account {
+  & .table {
+    & th {
+      cursor: pointer;
+    }
+    & tr:last-child {
+      td {
+        padding-bottom: 0;
+        border: none;
+      }
+    }
+    & th:first-child,
+    & td:first-child {
+      width: 20%;
+    }
+    & th:nth-child(2),
+    & td:nth-child(2) {
+      width: 20%;
+    }
+    & th:nth-child(3),
+    & td:nth-child(3) {
+      width: 40%;
+      padding-left: 80px;
+      & p {
+        display: inline-block;
+        width: 200px;
+      }
+    }
+    & th:nth-child(4),
+    & td:nth-child(4) {
+      width: 40%;
+    }
+  }
+}
+// TABLE STYLES
+.table {
+  // I use the class so that it does not conflict with the datepicker plugin
+  width: 100%;
+  & th {
+    font-size: 16px;
+    color: $darkBlue;
+    font-weight: 700;
+    padding-bottom: 8px;
+  }
+  & th,
+  & td {
+    text-align: left;
+    width: fit-content;
+    padding-right: 10px;
+  }
+  & td {
+    padding-bottom: 20px;
+  }
+  thead {
+    border-bottom: 3px solid #f6f6f6;
+  }
+  tbody {
+    & tr:first-child {
+      td {
+        padding-top: 30px;
+      }
+    }
+    & tr:last-child {
+      td {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #d1d1d1;
+      }
+    }
+  }
+  tfoot {
+    & td {
+      padding-top: 24px;
+      font-weight: 700;
+    }
+  }
+}
+
+.account-overview {
+  & table {
+    & th,
+    td {
+      width: 20%;
+    }
+    & a {
+      white-space: nowrap;
+      margin-left: 25px;
+      color: $lightBlue;
+      border-bottom: 2px solid $lightBlue;
+      @include transition(0.3);
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+// MEDIA QUERIES
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+  main {
+    margin-top: 30px;
+    min-height: auto;
+  }
+  .body-padding {
+    height: 90px;
+  }
+  .header {
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    & .d-flex {
+      justify-content: space-between;
+      align-items: center;
+    }
+    &-logo {
+      width: 200px;
+    }
+    &-notifications {
+      margin: 10px 0;
+    }
+    & .menu-item-has-child {
+      margin: 10px 0 0 0;
+    }
+    .menu {
+      margin-right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      &-item {
+        margin: 10px 0;
+        & a {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .navbar {
+    position: fixed;
+    width: 100%;
+    top: 94px;
+    right: -120vw;
+    background: $whiteColor;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    @include transition(0.3);
+    padding: 10px 10px 20px 10px;
+  }
+  .sub-menu {
+    right: unset;
+    left: 0;
+    text-align: left;
+  }
+  .hamburger {
+    display: block;
+  }
+  // ACCOUNT OVERVIEW
+  .law-firm-account .table th:first-child,
+  .law-firm-account .table td:first-child {
+    width: 16%;
+  }
+  .law-firm-account .table th:nth-child(3),
+  .law-firm-account .table td:nth-child(3) {
+    width: 34%;
+    padding-left: 0;
+  }
+  .account-overview-additional {
+    padding: 30px 0;
+  }
+  .account-overview__search {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .heading-1 {
+    font-size: 24px;
+  }
+  .heading-2 {
+    font-size: 20px;
+  }
+  .footer {
+    margin-top: 30px;
+    &-menu a {
+      margin-right: 6px;
+      padding-right: 6px;
+      font-size: 14px;
+    }
+  }
+  .account-overview .tabs {
+    margin: 30px 0 50px 0;
+  }
+  .tabs-list {
+    margin-bottom: 30px;
+    flex-direction: column;
+    border: none;
+    padding: 0 0 0 50px;
+    &__item {
+      margin: 0 0 15px 0;
+      &_link {
+        font-size: 16px;
+        margin: 0;
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          left: -50px;
+          top: 50%;
+          transform: translate(0, -50%);
+          width: 40px;
+          height: 3px;
+        }
+        &:before {
+          background: $lightBlue;
+          z-index: 1;
+        }
+        &:after {
+          background: #f6f6f6;
+        }
+      }
+    }
+
+  }
+  .table thead {
+    border: none;
+  }
+  .account-overview form {
+    margin-bottom: 0;
+  }
+  .account-overview form .col-xs-12{
+    margin-bottom: 20px;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table,
+  .table tbody,
+  .table td,
+  .table th,
+  .table thead,
+  .table tr {
+    display: block;
+  }
+  .law-firm-account .table td:nth-child(3) {
+    display: flex;
+  }
+  .table td {
+    border: none;
+    position: relative;
+    padding-left: 158px;
+  }
+  .table td:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 110px;
+    font-size: 13px;
+    padding-right: 10px;
+    color: #777;
+    white-space: nowrap;
+    content: attr(data-column);
+  }
+  .table td:after {
+    content: ":";
+    position: absolute;
+    left: 90px;
+    color: #777;
+    font-size: 17px;
+    top: 49%;
+    transform: translate(0, -50%);
+  }
+  .account-overview table td {
+    width: 100%;
+    line-height: 1.4;
+  }
+  .table tbody tr:first-child td {
+    padding: 5px 10px 5px 110px;
+  }
+  .table tbody tr:last-child td {
+    padding: 5px 10px 5px 110px;
+  }
+  .table tbody td {
+    padding: 5px 10px 5px 110px;
+  }
+  .table tbody tr:last-child td {
+    border: none;
+  }
+  .table tbody tr {
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+  .table tfoot td {
+    padding: 5px 10px 5px 110px;
+  }
+  .table tfoot td:first-child:after {
+    display: none;
+  }
+  .law-firm-account .table td:nth-child(3) {
+    padding: 5px 10px 5px 110px;
+  }
+  .law-firm-account .table td {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    & a {
+      margin: 0 0 10px 0;
+      padding: 0;
+      border-right: none;
+      border-bottom: 1px solid $defaultText;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    & li:last-child a {
+      border-bottom: 1px solid $defaultText;
+    }
+  }
+  .account-overview table a {
+    margin-left: 15px;
+    font-size: 12px;
   }
 }

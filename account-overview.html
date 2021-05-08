@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <title>BridgePoint Portal | Expert Search</title>
+</head>
+
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="d-flex">
+        <a href="index.html" class="header-logo">
+          <img src="./img/main-logo.png" alt="">
+        </a>
+        <div class="navbar">
+          <ul class="menu d-flex">
+            <li class="menu-item">
+              <a href="#">Home</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Account Overview</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Pending Requests</a>
+            </li>
+            <li class="menu-item menu-item-has-child">
+              <a href="#">Submit Request</a>
+              <ul class="sub-menu">
+                <li class="menu-item">
+                  <a href="#">Plaintiff Financing</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Disbursement Financing</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Expert Search</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Case Status Update</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Reports</a>
+            </li>
+          </ul>
+          <div class="header-notifications">
+            <i class="icon icon-bell"></i>
+          </div>
+          <div class="header-user menu-item-has-child">
+            <i class="icon icon-user"></i>
+            <ul class="sub-menu">
+              <li class="menu-item">
+                <a href="#">Account</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Contact Support</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="body-padding"></div>
+  <main>
+    <section class="account-overview">
+      <div class="container">
+        <h1 class="section-title">Account Overview</h1>
+        <div class="section-subtitle">Account balance summary and account details by funding type.</div>
+        <div class="tabs">
+          <ul class="tabs-list tabs-ul">
+            <li class="tabs-list__item">
+              <a onclick="front.openTab(this, 'tab-0','.tabs')" class="tabs-list__item_link tab-links active">Summary</a>
+            </li>
+            <li class="tabs-list__item">
+              <a onclick="front.openTab(this, 'tab-1','.tabs')" class="tabs-list__item_link tab-links">Law Firm
+                Accounts</a>
+            </li>
+            <li class="tabs-list__item">
+              <a onclick="front.openTab(this, 'tab-2','.tabs')" class="tabs-list__item_link tab-links">Plaintiff
+                Accounts</a>
+            </li>
+          </ul>
+          <div class="tabs-wrap">
+            <div class="tab-content active" id="tab-0">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Account Type</th>
+                    <th>Authorized</th>
+                    <th>Utilized</th>
+                    <th>Pending</th>
+                    <th>Available</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-column="Account Type">Expert Access</td>
+                    <td data-column="Authorized">$100,000.00</td>
+                    <td data-column="Utilized">$50,000.00</td>
+                    <td data-column="Pending">$10,000.00</td>
+                    <td data-column="Available">$40,000.00</td>
+                  </tr>
+                  <tr>
+                    <td data-column="Account Type">File Funder</td>
+                    <td data-column="Authorized">$50,000.00</td>
+                    <td data-column="Utilized">$25,000.00</td>
+                    <td data-column="Pending">$5,000.00</td>
+                    <td data-column="Available">$20,000.00<a href="#">New Funding Request</a></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td data-column="">Total</td>
+                    <td data-column="Authorized">$150,000.00</td>
+                    <td data-column="Utilized">$150,000.00</td>
+                    <td data-column="Pending">$15,000.00</td>
+                    <td data-column="Available">$15,000.00</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div class="tab-content" id="tab-1">
+              <div class="law-firm-account">
+                <h2 class="heading-2">Law Firm Account Statement</h2>
+                <form action="" class="row">
+                  <div class="col-md-4 col-xs-12">
+                    <label for="law-firm-account-search">Search by File or Plaintiff:</label>
+                    <div class="form-group">
+                      <input type="search" name="law-firm-account-search" id="law-firm-account-search"
+                        placeholder="File Number or Plaintiff Name">
+                      <button type="submit">
+                        <i class="icon icon-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xs-12">
+                    <label for="datepicker">Account balance as of:</label>
+                    <div class="form-group">
+                      <input type="text" name="law-firm-account-balance" id="datepicker" size="30"
+                        placeholder="31-Mar-2021">
+                    </div>
+                  </div>
+                </form>
+                <div class="table-sort">
+                  <span>Click on column headings to sort</span>
+                  <p>Files: 6</p>
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>File Number <i class="icon icon-arrow"></i></th>
+                      <th>Plaintiff</th>
+                      <th>Case Status</th>
+                      <th>Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-column="File Number">70652</td>
+                      <td data-column="Plaintiff">Maxwell, David</td>
+                      <td data-column="Case Status"><p>Case was abandoned/lost</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
+                    </tr>
+                    <tr>
+                      <td data-column="File Number">70653</td>
+                      <td data-column="Plaintiff">Marchand, Bradley</td>
+                      <td data-column="Case Status"><p>Case Settled</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
+                    </tr>
+                    <tr>
+                      <td data-column="File Number">70654</td>
+                      <td data-column="Plaintiff">Ovechkin, Alexis</td>
+                      <td data-column="Case Status"><p>Case was abandoned/lost</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
+                    </tr>
+                    <tr>
+                      <td data-column="File Number">70655</td>
+                      <td data-column="Plaintiff">Pachoretti, Maxwell</td>
+                      <td data-column="Case Status"><p>Case was abandoned/lost</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
+                    </tr>
+                    <tr>
+                      <td data-column="File Number">70656</td>
+                      <td data-column="Plaintiff">Vohn, Lindsay</td>
+                      <td data-column="Case Status"><p>Case Settled</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
+                    </tr>
+                    <tr>
+                      <td data-column="File Number">70657</td>
+                      <td data-column="Plaintiff">Theodore, Shea</td>
+                      <td data-column="Case Status"><p>Case Settled</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="account-overview-additional">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-xs-12"><div class="account-overview__search">
+            <div class="additional-icon">
+              <i class="icon icon-search"></i>
+            </div>
+            <h2 class="heading-2">Expert Search</h2>
+            <p>Search our extensive database of hundreds of expert profiles by specialty area, name, region or company.
+              All
+              accessible under BridgePoint’s <a href="#">Expert Access</a> Program.</p>
+            <a href="#" class="btn btn-primary">Find Experts</a>
+          </div></div>
+          <div class="col-lg-4 col-xs-12">
+            <div class="account-overview__resources">
+              <div class="additional-icon">
+                <i class="icon icon-add"></i>
+              </div>
+              <h2 class="heading-2">Resources</h2>
+              <ul class="resourses-links">
+                <li><a href="#">Introduction to File Funder</a></li>
+                <li><a href="#">Introduction to Expert Access</a></li>
+                <li><a href="#">The Preferred Program</a></li>
+                <li><a href="#">Sample Plaintiff Loan Term Sheet</a></li>
+                <li><a href="#">Sample Retainer Language</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="heading-2">
+        Specialized Funding Solutions from BridgePoint Financial
+      </div>
+      <ul class="footer-menu">
+        <li><a href="#">Settlement Loans</a></li>
+        <li><a href="#">Law Firm Funding</a></li>
+        <li><a href="#">Inheritance Loans</a></li>
+        <li><a href="#">Expropriation Financing</a></li>
+      </ul>
+      <div class="footer-copyright">
+        <p>Copyright © 2021 BridgePoint Financial Service Inc. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/jquery-datepicker.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
