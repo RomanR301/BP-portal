@@ -81,12 +81,13 @@
   <main>
     <section class="account-overview">
       <div class="container">
-        <h1 class="section-title">Account Overview</h1>
+        <h1 class="heading-1">Account Overview</h1>
         <div class="section-subtitle">Account balance summary and account details by funding type.</div>
         <div class="tabs">
           <ul class="tabs-list tabs-ul">
             <li class="tabs-list__item">
-              <a onclick="front.openTab(this, 'tab-0','.tabs')" class="tabs-list__item_link tab-links active">Summary</a>
+              <a onclick="front.openTab(this, 'tab-0','.tabs')"
+                class="tabs-list__item_link tab-links active">Summary</a>
             </li>
             <li class="tabs-list__item">
               <a onclick="front.openTab(this, 'tab-1','.tabs')" class="tabs-list__item_link tab-links">Law Firm
@@ -122,7 +123,8 @@
                     <td data-column="Authorized">$50,000.00</td>
                     <td data-column="Utilized">$25,000.00</td>
                     <td data-column="Pending">$5,000.00</td>
-                    <td data-column="Available">$20,000.00<a href="#">New Funding Request</a></td>
+                    <td data-column="Available">$20,000.00<a class="funding-request" href="new-funding-request.html">New
+                        Funding Request</a></td>
                   </tr>
                 </tbody>
                 <tfoot>
@@ -175,37 +177,52 @@
                     <tr>
                       <td data-column="File Number">70652</td>
                       <td data-column="Plaintiff">Maxwell, David</td>
-                      <td data-column="Case Status"><p>Case was abandoned/lost</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Case Status">
+                        <p>Case was abandoned/lost</p> <a href="case-status-update.html"><i
+                            class="icon icon-pencil"></i></a>
+                      </td>
                       <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
                     </tr>
                     <tr>
                       <td data-column="File Number">70653</td>
                       <td data-column="Plaintiff">Marchand, Bradley</td>
-                      <td data-column="Case Status"><p>Case Settled</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Case Status">
+                        <p>Case Settled</p> <a href="case-status-update.html"><i class="icon icon-pencil"></i></a>
+                      </td>
                       <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
                     </tr>
                     <tr>
                       <td data-column="File Number">70654</td>
                       <td data-column="Plaintiff">Ovechkin, Alexis</td>
-                      <td data-column="Case Status"><p>Case was abandoned/lost</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Case Status">
+                        <p>Case was abandoned/lost</p> <a href="case-status-update.html"><i
+                            class="icon icon-pencil"></i></a>
+                      </td>
                       <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
                     </tr>
                     <tr>
                       <td data-column="File Number">70655</td>
                       <td data-column="Plaintiff">Pachoretti, Maxwell</td>
-                      <td data-column="Case Status"><p>Case was abandoned/lost</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Case Status">
+                        <p>Case was abandoned/lost</p> <a href="case-status-update.html"><i
+                            class="icon icon-pencil"></i></a>
+                      </td>
                       <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
                     </tr>
                     <tr>
                       <td data-column="File Number">70656</td>
                       <td data-column="Plaintiff">Vohn, Lindsay</td>
-                      <td data-column="Case Status"><p>Case Settled</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Case Status">
+                        <p>Case Settled</p> <a href="case-status-update.html"><i class="icon icon-pencil"></i></a>
+                      </td>
                       <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
                     </tr>
                     <tr>
                       <td data-column="File Number">70657</td>
                       <td data-column="Plaintiff">Theodore, Shea</td>
-                      <td data-column="Case Status"><p>Case Settled</p> <i class="icon icon-pencil"></i></td>
+                      <td data-column="Case Status">
+                        <p>Case Settled</p> <a href="case-status-update.html"><i class="icon icon-pencil"></i></a>
+                      </td>
                       <td data-column="Balance">$18,000.00 <a href="#">File Details</a></td>
                     </tr>
                   </tbody>
@@ -219,16 +236,19 @@
     <section class="account-overview-additional">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-xs-12"><div class="account-overview__search">
-            <div class="additional-icon">
-              <i class="icon icon-search"></i>
+          <div class="col-lg-8 col-xs-12">
+            <div class="account-overview__search">
+              <div class="additional-icon">
+                <i class="icon icon-search"></i>
+              </div>
+              <h2 class="heading-2">Expert Search</h2>
+              <p>Search our extensive database of hundreds of expert profiles by specialty area, name, region or
+                company.
+                All
+                accessible under BridgePoint’s <a href="#">Expert Access</a> Program.</p>
+              <a href="#" class="btn btn-primary">Find Experts</a>
             </div>
-            <h2 class="heading-2">Expert Search</h2>
-            <p>Search our extensive database of hundreds of expert profiles by specialty area, name, region or company.
-              All
-              accessible under BridgePoint’s <a href="#">Expert Access</a> Program.</p>
-            <a href="#" class="btn btn-primary">Find Experts</a>
-          </div></div>
+          </div>
           <div class="col-lg-4 col-xs-12">
             <div class="account-overview__resources">
               <div class="additional-icon">

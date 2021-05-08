@@ -6,6 +6,7 @@ let front = {
   subMenu: $('.menu-item-has-child'),
   init: function () {
       this.events();
+      
       $( "#datepicker" ).datepicker({
         dateFormat: "dd-MM-yy"
     });
@@ -14,11 +15,9 @@ let front = {
     if (!this.hamburger.hasClass('open')) {
         this.hamburger.addClass('open');
         this.nav.toggleClass('active');
-        // this.$body.addClass('active')
         } else {
             this.hamburger.removeClass('open');
             this.nav.toggleClass('active');
-            // this.$body.removeClass('active')
         }
     },
     toggleLogin: function () {
@@ -31,7 +30,37 @@ let front = {
             }
         },
 
-
+    addFields: function() {
+        let formElement = `
+        <div class="row form-disbursement">
+        <div class="col-md-4 col-xs-12">
+          <label for="funding-request-amount-requested">Amount Requested<span>*</span></label>
+          <div class="form-group">
+            <input type="text" name="funding-request-amount-requested_1" id="funding-request-amount-requested_1"
+              required>
+          </div>
+        </div>
+        <div class="col-md-8 col-xs-12">
+          <label for="funding-request-description">Description <small>(maximum 100 characters)</small></label>
+          <div class="form-group">
+            <input type="text" name="funding-request-description-1" id="funding-request-description-1" maxlength="100">
+          </div>
+        </div>
+        <div class="col-xs-12 d-flex align-items-center">
+          <div class="upload">
+            <input id="upload_2" type="file" name="upload_2" class="empty">
+            <label for="upload_2" data-input-value="" data-select-text="Select file" data-remove-text="Remove file"
+              data-drag-text="Upload Attachment">
+            </label>
+          </div>
+          <span class="upload-helper">(i.e. invoice)</span>
+        </div>
+      </div>
+      
+      `
+        $(formElement).insertBefore('.funding-request-add')
+        
+    },
   openTab: function (element, tabName, parent) {
       let i, tab_content, tab_links;
 
@@ -50,6 +79,7 @@ let front = {
       document.getElementById(tabName).style.display = "block";
       $(element).addClass('active');
   },
+
   events: function () {
       let self = this;
       $(document).on('click', '.hamburger', function () {
@@ -64,7 +94,6 @@ let front = {
           } else {
               null;
           }
-
       });
   }
 };
@@ -73,81 +102,45 @@ let front = {
 jQuery(function () {
   front.init();
 });
-
-// $(window).scroll(function () {
-//   if ($(this).scrollTop() > 10) {
-//     $('.scroll-to-top').addClass("scrolled");
-//   } else {
-//   	$('.scroll-to-top').removeClass("scrolled");
-//   }
-// });
-
-document.body.addEventListener('keyup', function(e) {
-  if (e.which === 9) /* tab */ {
-    document.body.classList.remove('no-focus-outline');
-  }
-});
-
-
-// HIDE MENU ON BODY CLICK
-
-// $('html').click(function(e) {
-//     var a = e.target;
-//     if ($(a).parents('.menu-item-has-child').length === 0) {
-//       $('.menu-item-has-child').removeClass('show'); //hide menu item
-//    }
-//   });
-
-$(document).ready(function() {
-	
-    var readURL = function(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('.profile-pic').attr('src', e.target.result);
+$(document).ready(function(){
+    $('.upload input[type=file]').each(function () {
+        var eventNamespace = '.upload';
+        var labelInputValueAttr = 'data-input-value';
+        var $input = $(this);
+        var $inputClone = $input.clone(true,true);
+        $inputClone.removeClass('empty');
+        var $label = $input.next('label');
+        var setLabelInputValue = function () {
+            var $input = $(this);
+            if($input.val() && $input.val() !== ''){
+            $input.removeClass('empty');
+            $label.attr(labelInputValueAttr, $input.val().split('\\').pop());
+            } else {
+            $label.attr(labelInputValueAttr, '');
+            $input.addClass('empty');
             }
-    
-            reader.readAsDataURL(input.files[0]);
         }
-    }
-   
-    $(".file-upload").on('change', function(){
-        readURL(this);
+        if(!$input.val() || $input.val() === ''){
+            $input.addClass('empty');
+        }
+        $label.attr(labelInputValueAttr,'');
+        $input.on('change' + eventNamespace, setLabelInputValue);
+        $label.on('click' + eventNamespace, function (event) {
+            if($input.val() && $input.val() !== '' && $input.is(':valid')){
+            event.preventDefault();
+            $input.remove();
+            $label.before($inputClone); // cant just empty val because of ie
+            $input = $inputClone;
+            if(!$input.val() || $input.val() === ''){
+                $input.addClass('empty');
+            }
+            $inputClone = $input.clone(true,true);
+            $inputClone.removeClass('empty');
+            $input.off('change' + eventNamespace);
+            $input.on('change' + eventNamespace, setLabelInputValue);
+            $label.attr(labelInputValueAttr,'');
+            }
+        });
     });
-    
-    $(".upload-button, .edit-profile-image-btn").on('click', function() {
-       $(".file-upload").click();
-    });
-
-    $('a.btn[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
-	    var target = this.hash;
-	    var $target = $(target);
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900);
-    });
-    $('.menu-item-has-child a').on('click', function(e) {
-        e.preventDefault();
-    })
-
-
-   
-    $('#edit-profile-save').attr('disabled', true); 
-    $('.edit-page-filled #edit-profile-save').attr('disabled', false); 
-    $('.edit-page input, .edit-page textarea, .edit-page select').on('change', (event) => {
-        event.preventDefault();
-        $('#edit-profile-save').attr('disabled', false);
-    });
-    
-
-    $('.input-file').change(function() {
-        var filepath = this.value;
-        var m = filepath.match(/([^\/\\]+)$/);
-        var filename = m[1];
-        $(this).parent().parent().find('.filename').html(filename);
-    });
-});
-
+  });
 

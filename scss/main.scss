@@ -268,19 +268,23 @@ main {
 .--uppercase {
   text-transform: uppercase;
 }
-
+.heading-1 {
+  color: $darkBlue;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
 .heading-2 {
   font-size: 24px;
   font-weight: 700;
   color: $darkBlue;
   margin-bottom: 15px;
 }
-
-.section-title {
-  color: $darkBlue;
-  font-size: 24px;
+.heading-3 {
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 15px;
+  color: $darkBlue;
+  margin-bottom: 10px;
 }
 .section-subtitle {
   font-size: 18px;
@@ -322,6 +326,21 @@ main {
     width: 11px;
     height: 11px;
   }
+  &-print {
+    background-image: url("../img/icon-print.png");
+    width: 18px;
+    height: 18px;
+  }
+  &-calendar {
+    background-image: url("../img/icon-calendar.png");
+    width: 16px;
+    height: 17px;
+  }
+  &-attachment {
+    background-image: url('../img/icon-attachment.png');
+    width: 17px;
+    height: 17px;
+  }
 }
 // GRID
 .container {
@@ -350,8 +369,14 @@ main {
 .d-flex {
   display: flex;
 }
+.align-items-center {
+  align-items: center
+}
 .m-row {
   margin: 0;
+}
+.mt-30 {
+  margin-top: 30px;
 }
 
 @for $i from 1 through 12 {
@@ -530,7 +555,8 @@ main {
   width: 100%;
   position: relative;
   & input,
-  & textarea {
+  & textarea,
+  & select {
     width: 100%;
     font-family: inherit;
     color: $defaultText;
@@ -552,6 +578,14 @@ main {
   & textarea {
     line-height: 1.5;
   }
+  & select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('../img/icon-arrow-small.png');
+    background-repeat: no-repeat;
+    background-size: 14px;
+    background-position: center right 12px;
+  }
   & button[type="submit"] {
     position: absolute;
     right: 0;
@@ -562,6 +596,121 @@ main {
     background: transparent;
     cursor: pointer;
   }
+}
+.form-buttons {
+  margin-top: 85px;
+  display: flex;
+  align-items: center;
+  & button {
+    width: 150px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 16px;
+    @include transition(.3);
+  }
+  &__submit {
+    background: $lightBlue;
+    color: $whiteColor;
+    margin-right: 10px;
+    &:hover {
+      background: $darkBlue;
+    }
+  }
+  &__cancel {
+    background: #F6F6F6;
+    color: $defaultText;
+    &:hover {
+      background: #dfdfdf;
+    }
+  }
+}
+.upload {
+  position: relative;
+  display: block;
+  width: 210px;
+  height: 40px;
+  cursor: pointer;
+  width: fit-content;
+  min-width: 210px;
+  margin-top: 30px;
+  input[type=file] {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    &:not(.empty):valid + label:before {
+      content: '';
+      display: block;
+      cursor: pointer;
+      z-index: 5;
+      position: absolute;
+      right: -25px;
+      width: 18px;
+      height: 18px;
+      top: 50%;
+      transform: translate(0, -50%);
+      z-index: 2;
+      background-image: url('../img/icon-remove.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      color: #fff;
+      text-align: center;
+    }
+    &:not(.empty):valid + label:after {
+      background-color: $whiteColor;
+      color: $lightBlue;
+      text-decoration: underline;
+      pointer-events: none;
+      background-image: url('../img/icon-attachment.png');
+    }
+    &:invalid + label:after,
+    &.empty + label:after {
+      content: attr(data-drag-text);
+    }
+  }
+
+  label {
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    &:before, &:after {
+      display: block;
+      text-overflow: ellipsis; 
+      overflow: hidden; 
+      white-space: nowrap;
+    }
+    &:after {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: $darkBlue;
+      color: $whiteColor;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      content: attr(data-input-value);
+      background-image: url('../img/icon-file.png');
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: center left 18px;
+      padding: 0 0 0 45px;
+      z-index: 3;
+      cursor: pointer;
+    }
+  }
+}
+#datepicker {
+  background-image: url('../img/icon-calendar.png');
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: center right 15px;
 }
 label {
   margin-bottom: 13px;
@@ -945,7 +1094,7 @@ label {
     td {
       width: 20%;
     }
-    & a {
+    & .funding-request {
       white-space: nowrap;
       margin-left: 25px;
       color: $lightBlue;
@@ -957,7 +1106,245 @@ label {
     }
   }
 }
+// FILE DETAILS PAGE
+.file-details {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid #F6F6F6;
+  }
+  &__name {
+    & p {
+      font-size: 18px;
+    }
+  }
+  &__type {
+    margin-bottom: 10px;
+    color: $darkBlue;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  &__description {
+    margin-bottom: 24px;
+  }
+  &-cards {
+    margin: 50px -15px 20px -15px;
+    & .col-xs-6 {
+      margin-bottom: 30px;
+    }
+    & .cards {
+      &__item {
+        background: #F6F6F6;
+        padding: 20px;
+        border: 2px solid transparent;
+        height: 100%;
+        &.active {
+          border-color: $darkBlue;
+          & .cards__value {
+            font-weight: 700;
+          }
+        }
+      }
+      &__heading {
+        font-size: 18px;
+        color: $darkBlue;
+        font-weight: 700;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        & i {
+          margin-left: 5px;
+        }
+      }
+      &__value {
+        font-size: 18px;
+      }
+    }   
+  }
+}
+.print-page {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    & span {
+      border-color: transparent;
+    }
+  }
+  & i {
+    margin-right: 10px;
+  }
+  & span {
+    color: $lightBlue;
+    line-height: 1.2;
+    border-bottom: 1px solid $lightBlue;
+    @include transition(.3);
+  }
+}
+// NEW FUNDING REQUEST PAGE
+.funding-request {
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 65px;
+    & h1 {
+      margin-bottom: 0;
+      line-height: 1;
+    }
+  }
+  &__image {
+    display: flex;
+    width: 300px;
+    & img {
+      @include defaultIcon(contain);
+    }
+  }
+  &__form {
+    & .form-group {
+      margin-bottom: 30px;
+    }
+    & label {
+      & span {
+        color: #FF0000;
+      }
+      & small {
+        font-size: 14px;
+      }
+    }
+  }
+  &-add {
+    padding-top: 30px;
+    border-top: 1px solid #D1D1D1;
+    & .add-funding {
+      color: $lightBlue;
+      border-bottom: 1px solid $lightBlue;
+      @include transition(.3);
+      cursor: pointer;
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+}
+.upload-helper {
+  margin: 15px 0 0 40px;
+  font-size: 14px;
+}
+.form-disbursement {
+  padding-bottom: 48px;
+}
+// CASE STATUS UPDATE PAGE
+.status-update {
+  &__header {
+    margin-bottom: 50px;
+  }
+}
+// EXPERT ACCESS STATUS UPDATE PAGE 
+.status-update-expert {
+  &__header {
+    align-items: flex-end;
+    margin-bottom: 50px;
+    & h1 {
+      margin-bottom: 0;
+      text-align: right;
+    }
+  }
+  &__image {
+    display: flex;
+    width: 300px;
+    & img {
+      @include defaultIcon(contain);
+    }
+  }
+}
+// TRANSACTION PAGE
+.transaction-details {
+  &-header {
+    align-items: flex-end;
+    margin-bottom: 50px;
+    & .col-md-4:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    & .section-subtitle, & h1 {
+      margin: 0;
+      line-height: 1;
+    }
+    & h1 {
+      margin-top: 40px;
+    }
+  }
+  &__image {
+    display: flex;
+    width: 300px;
+    & img {
+      @include defaultIcon(contain);
+    }
+  }
+  &__information {
+    & .information {
+      &-item {
+        display: flex;
+        margin-bottom: 10px;
+        & small {
+          font-size: 10px;
+        }
+      }
+      &__key {
+        width: 33.33%;
+        margin-right: 8px;
+        font-weight: 700;
+      }
+      &-total {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #D1D1D1;
+        & .information__value {
+          font-weight: 700;
+        }
+      }
+      &-file {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        & span {
+          color: $lightBlue;
+          line-height: 1;
+          width: fit-content;
+          border-bottom: 1px solid $lightBlue;
+          display: block;
+          margin-left: 8px;
+        }
+      }
+      &-back {
+        margin-top: 85px;
+        & a {
+          width: 150px;
+          height: 46px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid transparent;
+          cursor: pointer;
+          font-size: 16px;
+          @include transition(.3);
+          background: $lightBlue;
+          color: $whiteColor;
+          margin-right: 10px;
+          &:hover {
+            background: $darkBlue;
+          }
+        }
+      }
+    }
+  }
 
+}
 // MEDIA QUERIES
 @media (max-width: 1200px) {
 }
@@ -1038,6 +1425,12 @@ label {
   .account-overview__search {
     margin-bottom: 30px;
   }
+  .status-update-expert__image {
+    width: 100%;
+  }
+  .transaction-details__image {
+    width: 200px;
+  }
 }
 @media (max-width: 767px) {
   .heading-1 {
@@ -1045,6 +1438,9 @@ label {
   }
   .heading-2 {
     font-size: 20px;
+  }
+  .form-buttons {
+    margin-top: 50px;
   }
   .footer {
     margin-top: 30px;
@@ -1058,7 +1454,7 @@ label {
     margin: 30px 0 50px 0;
   }
   .tabs-list {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     flex-direction: column;
     border: none;
     padding: 0 0 0 50px;
@@ -1171,6 +1567,82 @@ label {
   .law-firm-account .table td {
     width: 100% !important;
   }
+  .funding-request {
+    &__header {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__image {
+      width: 200px;
+    }
+    & .form-group {
+      margin-bottom: 15px;
+    }
+  }
+  .upload, .upload-helper {
+    margin-top: 15px;
+  }
+  .upload-helper {
+    font-size: 11px;
+  }
+  .status-update-expert {
+    &__image {
+      width: 250px;
+      margin: auto;
+    }
+    &__header {
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+      & .col-xs-12 {
+        margin-bottom: 10px;
+      }
+      & .col-xs-12:nth-child(2) {
+        order: 3;
+      }
+      & h1 {
+        text-align: center;
+      }
+    }
+  }
+  .transaction-details {
+    &-header {
+      position: relative;
+      margin-bottom: 30px;
+      & .section-subtitle, & h1{
+        text-align: center;
+        margin: 10px 0;
+      }
+      & .col-md-4:nth-child(2) {
+        order: 3;
+      }
+      & .col-md-4:nth-child(3) {
+        align-items: center;
+        order: 2;
+      }
+      & .print-page {
+        position: absolute;
+        right: 20px;
+        top: 0;
+      }
+    }
+    &__image {
+      margin: auto auto 10px auto;
+    }
+    &__information {
+      & .information__key {
+        min-width: 150px;
+        width: 150px;
+        margin-right: 20px;
+      }
+      & .information-file {
+        margin-top: 30px;
+      }
+      & .information-back {
+        margin-top: 50px;
+      }
+    }
+  }
 }
 
 @media (max-width: 576px) {
@@ -1190,7 +1662,7 @@ label {
       border-bottom: 1px solid $defaultText;
     }
   }
-  .account-overview table a {
+  .account-overview table .funding-request {
     margin-left: 15px;
     font-size: 12px;
   }

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <title>BridgePoint Portal | Expert Search</title>
+</head>
+
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="d-flex">
+        <a href="index.html" class="header-logo">
+          <img src="./img/main-logo.png" alt="">
+        </a>
+        <div class="navbar">
+          <ul class="menu d-flex">
+            <li class="menu-item">
+              <a href="#">Home</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Account Overview</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Pending Requests</a>
+            </li>
+            <li class="menu-item menu-item-has-child">
+              <a href="#">Submit Request</a>
+              <ul class="sub-menu">
+                <li class="menu-item">
+                  <a href="#">Plaintiff Financing</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Disbursement Financing</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Expert Search</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">Case Status Update</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Reports</a>
+            </li>
+          </ul>
+          <div class="header-notifications">
+            <i class="icon icon-bell"></i>
+          </div>
+          <div class="header-user menu-item-has-child">
+            <i class="icon icon-user"></i>
+            <ul class="sub-menu">
+              <li class="menu-item">
+                <a href="#">Account</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Contact Support</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="body-padding"></div>
+  <main>
+    <section class="funding-request">
+      <div class="container">
+        <div class="funding-request__header">
+          <div class="funding-request__image">
+            <img src="./img/file-funder.png" alt="File Funder icon">
+          </div>
+          <h1 class="heading-1">Funding Request</h1>
+        </div>
+        <form action="">
+          <div class="row funding-request__form">
+            <div class="col-md-4 col-xs-12">
+              <label for="funding-request-number">File Number <span>*</span></label>
+              <div class="form-group">
+                <input type="number" name="funding-request-number" id="funding-request-number" required>
+              </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+              <label for="funding-request-first-name">Plaintiff First Name<span>*</span></label>
+              <div class="form-group">
+                <input type="text" name="funding-request-first-name" id="funding-request-first-name" required>
+              </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+              <label for="funding-request-last-name">Plaintiff Last Name<span>*</span></label>
+              <div class="form-group">
+                <input type="text" name="funding-request-last-name" id="funding-request-last-name" required>
+              </div>
+            </div>
+          </div>
+          <div class="row form-disbursement">
+            <div class="col-md-4 col-xs-12">
+              <label for="funding-request-amount-requested">Amount Requested<span>*</span></label>
+              <div class="form-group">
+                <input type="text" name="funding-request-amount-requested_1" id="funding-request-amount-requested_1"
+                  required>
+              </div>
+            </div>
+            <div class="col-md-8 col-xs-12">
+              <label for="funding-request-description">Description <small>(maximum 100 characters)</small></label>
+              <div class="form-group">
+                <input type="text" name="funding-request-description-1" id="funding-request-description-1"
+                  maxlength="100">
+              </div>
+            </div>
+            <div class="col-xs-12 d-flex align-items-center">
+              <div class="upload">
+                <input id="upload_1" type="file" name="upload_1">
+                <label for="upload_1" data-input-value="" data-select-text="Select file" data-remove-text="Remove file"
+                  data-drag-text="Upload Attachment">
+                </label>
+              </div>
+              <span class="upload-helper">(i.e. invoice)</span>
+            </div>
+          </div>
+          <div class="funding-request-add">
+            <span class="add-funding" onclick="front.addFields()">Add another disbursement</span>
+          </div>
+          <div class="form-buttons">
+            <button class="form-buttons__submit" type="submit">Submit</button>
+            <button class="form-buttons__cancel">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="heading-2">
+        Specialized Funding Solutions from BridgePoint Financial
+      </div>
+      <ul class="footer-menu">
+        <li><a href="#">Settlement Loans</a></li>
+        <li><a href="#">Law Firm Funding</a></li>
+        <li><a href="#">Inheritance Loans</a></li>
+        <li><a href="#">Expropriation Financing</a></li>
+      </ul>
+      <div class="footer-copyright">
+        <p>Copyright © 2021 BridgePoint Financial Service Inc. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/jquery-datepicker.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
