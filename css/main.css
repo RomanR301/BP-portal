@@ -422,69 +422,6 @@ main {
   padding: 0 15px;
 }
 
-@media (min-width: 576px) {
-  .col-sm-1 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
-    padding: 0 15px;
-  }
-  .col-sm-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
-    padding: 0 15px;
-  }
-  .col-sm-3 {
-    flex: 0 0 25.0%;
-    max-width: 25.0%;
-    padding: 0 15px;
-  }
-  .col-sm-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-    padding: 0 15px;
-  }
-  .col-sm-5 {
-    flex: 0 0 41.66666%;
-    max-width: 41.66666%;
-    padding: 0 15px;
-  }
-  .col-sm-6 {
-    flex: 0 0 50.0%;
-    max-width: 50.0%;
-    padding: 0 15px;
-  }
-  .col-sm-7 {
-    flex: 0 0 58.33333%;
-    max-width: 58.33333%;
-    padding: 0 15px;
-  }
-  .col-sm-8 {
-    flex: 0 0 66.66666%;
-    max-width: 66.66666%;
-    padding: 0 15px;
-  }
-  .col-sm-9 {
-    flex: 0 0 75.0%;
-    max-width: 75.0%;
-    padding: 0 15px;
-  }
-  .col-sm-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
-    padding: 0 15px;
-  }
-  .col-sm-11 {
-    flex: 0 0 91.66666%;
-    max-width: 91.66666%;
-    padding: 0 15px;
-  }
-  .col-sm-12 {
-    flex: 0 0 100.0%;
-    max-width: 100.0%;
-    padding: 0 15px;
-  }
-}
-
 @media (min-width: 768px) {
   .col-md-1 {
     flex: 0 0 8.33333%;
@@ -611,133 +548,6 @@ main {
   }
 }
 
-@media (min-width: 1200px) {
-  .col-xl-1 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
-    padding: 0 15px;
-  }
-  .col-xl-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
-    padding: 0 15px;
-  }
-  .col-xl-3 {
-    flex: 0 0 25.0%;
-    max-width: 25.0%;
-    padding: 0 15px;
-  }
-  .col-xl-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-    padding: 0 15px;
-  }
-  .col-xl-5 {
-    flex: 0 0 41.66666%;
-    max-width: 41.66666%;
-    padding: 0 15px;
-  }
-  .col-xl-6 {
-    flex: 0 0 50.0%;
-    max-width: 50.0%;
-    padding: 0 15px;
-  }
-  .col-xl-7 {
-    flex: 0 0 58.33333%;
-    max-width: 58.33333%;
-    padding: 0 15px;
-  }
-  .col-xl-8 {
-    flex: 0 0 66.66666%;
-    max-width: 66.66666%;
-    padding: 0 15px;
-  }
-  .col-xl-9 {
-    flex: 0 0 75.0%;
-    max-width: 75.0%;
-    padding: 0 15px;
-  }
-  .col-xl-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
-    padding: 0 15px;
-  }
-  .col-xl-11 {
-    flex: 0 0 91.66666%;
-    max-width: 91.66666%;
-    padding: 0 15px;
-  }
-  .col-xl-12 {
-    flex: 0 0 100.0%;
-    max-width: 100.0%;
-    padding: 0 15px;
-  }
-}
-
-/* small phones grid*/
-@media (max-width: 475px) {
-  .col-exs-1 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
-    padding: 0 15px;
-  }
-  .col-exs-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
-    padding: 0 15px;
-  }
-  .col-exs-3 {
-    flex: 0 0 25.0%;
-    max-width: 25.0%;
-    padding: 0 15px;
-  }
-  .col-exs-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-    padding: 0 15px;
-  }
-  .col-exs-5 {
-    flex: 0 0 41.66666%;
-    max-width: 41.66666%;
-    padding: 0 15px;
-  }
-  .col-exs-6 {
-    flex: 0 0 50.0%;
-    max-width: 50.0%;
-    padding: 0 15px;
-  }
-  .col-exs-7 {
-    flex: 0 0 58.33333%;
-    max-width: 58.33333%;
-    padding: 0 15px;
-  }
-  .col-exs-8 {
-    flex: 0 0 66.66666%;
-    max-width: 66.66666%;
-    padding: 0 15px;
-  }
-  .col-exs-9 {
-    flex: 0 0 75.0%;
-    max-width: 75.0%;
-    padding: 0 15px;
-  }
-  .col-exs-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
-    padding: 0 15px;
-  }
-  .col-exs-11 {
-    flex: 0 0 91.66666%;
-    max-width: 91.66666%;
-    padding: 0 15px;
-  }
-  .col-exs-12 {
-    flex: 0 0 100.0%;
-    max-width: 100.0%;
-    padding: 0 15px;
-  }
-}
-
 .btn {
   font-size: 14px;
   line-height: 1;
@@ -780,23 +590,18 @@ main {
 }
 
 .btn-file {
+  background-color: #014f82;
   color: #ffffff;
-  width: 220px;
-  height: 36px;
-  padding: 3px 8px;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
+  background-image: url("../img/icon-file.png");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: center left 20px;
+  border-radius: 20px;
+  padding: 10px 33px 10px 50px;
 }
 
-.btn-file:before {
-  font-family: "icomoon";
-  content: "\e902";
-  color: #fefefe;
-  margin-right: 5px;
-  transition: all 0.3s ease-out;
+.btn-file:hover {
+  background-color: #009ade;
 }
 
 .tabs-list {
@@ -960,9 +765,11 @@ main {
   align-items: center;
 }
 
-.form-buttons button {
-  width: 150px;
+.form-buttons button, .form-buttons a {
+  white-space: nowrap;
+  min-width: 150px;
   height: 46px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -983,7 +790,7 @@ main {
 }
 
 .form-buttons__cancel {
-  background: #F6F6F6;
+  background: #f6f6f6;
   color: #333333;
 }
 
@@ -1004,7 +811,7 @@ main {
   margin-top: 30px;
 }
 
-.upload input[type=file] {
+.upload input[type="file"] {
   position: absolute;
   z-index: 1;
   height: 100%;
@@ -1012,8 +819,8 @@ main {
   opacity: 0;
 }
 
-.upload input[type=file]:not(.empty):valid + label:before {
-  content: '';
+.upload input[type="file"]:not(.empty):valid + label:before {
+  content: "";
   display: block;
   cursor: pointer;
   z-index: 5;
@@ -1032,7 +839,7 @@ main {
   text-align: center;
 }
 
-.upload input[type=file]:not(.empty):valid + label:after {
+.upload input[type="file"]:not(.empty):valid + label:after {
   background-color: #ffffff;
   color: #009ade;
   text-decoration: underline;
@@ -1040,8 +847,8 @@ main {
   background-image: url("../img/icon-attachment.png");
 }
 
-.upload input[type=file]:invalid + label:after,
-.upload input[type=file].empty + label:after {
+.upload input[type="file"]:invalid + label:after,
+.upload input[type="file"].empty + label:after {
   content: attr(data-drag-text);
 }
 
@@ -1419,20 +1226,22 @@ label {
   margin-bottom: 45px;
 }
 
-.account-overview .table-sort {
+.table-sort {
   display: flex;
   justify-content: space-between;
   margin-bottom: 26px;
 }
 
-.account-overview .table-sort span {
+.table-sort span {
   font-size: 14px;
+  line-height: 1;
 }
 
-.account-overview .table-sort p {
+.table-sort p {
   font-size: 14px;
   color: #009ade;
   font-weight: 700;
+  line-height: 1;
 }
 
 .law-firm-account .table th {
@@ -1536,7 +1345,7 @@ label {
   align-items: center;
   margin-bottom: 50px;
   padding-bottom: 30px;
-  border-bottom: 3px solid #F6F6F6;
+  border-bottom: 3px solid #f6f6f6;
 }
 
 .file-details__name p {
@@ -1563,7 +1372,7 @@ label {
 }
 
 .file-details-cards .cards__item {
-  background: #F6F6F6;
+  background: #f6f6f6;
   padding: 20px;
   border: 2px solid transparent;
   height: 100%;
@@ -1594,6 +1403,57 @@ label {
   font-size: 18px;
 }
 
+.file-details__expert_access {
+  margin-bottom: 60px;
+}
+
+.file-details__file_funder {
+  margin-bottom: 50px;
+}
+
+.file-details-table-helper {
+  font-size: 12px;
+  margin: 18px 0 50px 0;
+}
+
+.file-details-table-addition {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.file-details-table-addition p {
+  margin-right: 20px;
+  width: 65%;
+}
+
+.file-details .form-buttons {
+  margin-bottom: 80px;
+}
+
+.file-details .file_funder_header {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.file-details .file_funder_header h2 {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.file-details .file_funder_header a {
+  margin-left: 18px;
+  line-height: 1;
+  color: #009ade;
+  transition: all 0.3s ease-out;
+  border-bottom: 1px solid #009ade;
+}
+
+.file-details .file_funder_header a:hover {
+  border-color: transparent;
+}
+
 .print-page {
   display: flex;
   align-items: center;
@@ -1613,6 +1473,104 @@ label {
   line-height: 1.2;
   border-bottom: 1px solid #009ade;
   transition: all 0.3s ease-out;
+}
+
+.file-details .table th {
+  cursor: pointer;
+  color: #333333;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.file-details .table th label:before {
+  border-width: 2px;
+  margin-right: 15px;
+}
+
+.file-details .table td {
+  font-size: 14px;
+}
+
+.file-details .table a {
+  color: #009ade;
+  line-height: 0.6;
+  text-decoration: underline;
+  transition: all 0.3s ease-out;
+  margin-left: 15px;
+}
+
+.file-details .table a:hover {
+  color: #014f82;
+}
+
+.file-details .table tbody tr:first-child td {
+  padding-top: 15px;
+}
+
+.file-details .table tbody tr:last-child td {
+  padding-bottom: 20px;
+}
+
+.file-details .table thead {
+  border-top: 3px solid #f6f6f6;
+  border-bottom: none;
+}
+
+.file-details .table tfoot td {
+  padding: 15px 0;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.file-details .table input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+}
+
+.file-details .table input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+}
+
+.file-details .table input:checked + label:before {
+  background: #014f82;
+  border-color: #014f82;
+}
+
+.file-details .table label {
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+}
+
+.file-details .table label:before {
+  content: "";
+  -webkit-appearance: none;
+  padding: 7px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 0 3px 0;
+  background-color: transparent;
+  border: 1px solid #555555;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.file-details .table label:after {
+  transition: all 0.3s ease-in-out;
 }
 
 .funding-request__header {
@@ -1645,7 +1603,7 @@ label {
 }
 
 .funding-request__form label span {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 .funding-request__form label small {
@@ -1654,7 +1612,7 @@ label {
 
 .funding-request-add {
   padding-top: 30px;
-  border-top: 1px solid #D1D1D1;
+  border-top: 1px solid #d1d1d1;
 }
 
 .funding-request-add .add-funding {
@@ -1669,7 +1627,7 @@ label {
 }
 
 .upload-helper {
-  margin: 15px 0 0 40px;
+  margin: 30px 0 0 40px;
   font-size: 14px;
 }
 
@@ -1715,7 +1673,8 @@ label {
   align-items: flex-end;
 }
 
-.transaction-details-header .section-subtitle, .transaction-details-header h1 {
+.transaction-details-header .section-subtitle,
+.transaction-details-header h1 {
   margin: 0;
   line-height: 1;
 }
@@ -1755,7 +1714,7 @@ label {
 .transaction-details__information .information-total {
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid #D1D1D1;
+  border-top: 1px solid #d1d1d1;
 }
 
 .transaction-details__information .information-total .information__value {
@@ -1884,6 +1843,12 @@ label {
   .transaction-details__image {
     width: 200px;
   }
+  .file-details .table td {
+    font-size: 12px;
+  }
+  .file-details .table th:first-child {
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1921,7 +1886,7 @@ label {
     margin: 0;
   }
   .tabs-list__item_link:before, .tabs-list__item_link:after {
-    content: '';
+    content: "";
     position: absolute;
     left: -50px;
     top: 50%;
@@ -1994,6 +1959,12 @@ label {
     width: 100%;
     line-height: 1.4;
   }
+  .table-sort {
+    margin-bottom: 20px;
+  }
+  .table-sort span {
+    display: none;
+  }
   .table tbody tr:first-child td {
     padding: 5px 10px 5px 110px;
   }
@@ -2033,7 +2004,8 @@ label {
   .funding-request .form-group {
     margin-bottom: 15px;
   }
-  .upload, .upload-helper {
+  .upload,
+  .upload-helper {
     margin-top: 15px;
   }
   .upload-helper {
@@ -2061,7 +2033,8 @@ label {
     position: relative;
     margin-bottom: 30px;
   }
-  .transaction-details-header .section-subtitle, .transaction-details-header h1 {
+  .transaction-details-header .section-subtitle,
+  .transaction-details-header h1 {
     text-align: center;
     margin: 10px 0;
   }
@@ -2090,6 +2063,54 @@ label {
   }
   .transaction-details__information .information-back {
     margin-top: 50px;
+  }
+  .file-details__header {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+  .file-details-cards {
+    margin: 30px -15px 0 -15px;
+  }
+  .file-details-cards .cards__heading {
+    font-size: 14px;
+  }
+  .file-details-cards .cards__value {
+    font-size: 14px;
+  }
+  .file-details .table td {
+    font-size: 14px;
+    padding: 5px 10px 5px 130px;
+  }
+  .file-details .table td:before {
+    width: 130px;
+  }
+  .file-details .table td:after {
+    left: 110px;
+  }
+  .file-details .table th:first-child {
+    white-space: nowrap;
+  }
+  .file-details .table tbody tr:first-child td,
+  .file-details .table tbody tr:last-child td,
+  .file-details .table tfoot td {
+    padding: 5px 10px 5px 130px;
+  }
+  .file-details .table tfoot td {
+    border: none;
+  }
+  .file-details-table-addition {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .file-details-table-addition p {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+  .file-details-table-helper {
+    margin: 15px 0 30px 0;
+  }
+  .file-details .form-buttons {
+    margin: 50px 0 50px 0;
   }
 }
 

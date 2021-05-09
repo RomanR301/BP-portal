@@ -337,7 +337,7 @@ main {
     height: 17px;
   }
   &-attachment {
-    background-image: url('../img/icon-attachment.png');
+    background-image: url("../img/icon-attachment.png");
     width: 17px;
     height: 17px;
   }
@@ -370,7 +370,7 @@ main {
   display: flex;
 }
 .align-items-center {
-  align-items: center
+  align-items: center;
 }
 .m-row {
   margin: 0;
@@ -385,16 +385,6 @@ main {
     padding: 0 15px;
   }
 }
-
-@media (min-width: ($breakpoint-grid-sm)) {
-  @for $i from 1 through 12 {
-    .col-sm-#{$i} {
-      @include grid-size(8.333333% * $i);
-      padding: 0 15px;
-    }
-  }
-}
-
 @media (min-width: ($breakpoint-grid-md)) {
   @for $i from 1 through 12 {
     .col-md-#{$i} {
@@ -403,29 +393,9 @@ main {
     }
   }
 }
-
 @media (min-width: ($breakpoint-grid-lg)) {
   @for $i from 1 through 12 {
     .col-lg-#{$i} {
-      @include grid-size(8.333333% * $i);
-      padding: 0 15px;
-    }
-  }
-}
-
-@media (min-width: ($breakpoint-grid-xl)) {
-  @for $i from 1 through 12 {
-    .col-xl-#{$i} {
-      @include grid-size(8.333333% * $i);
-      padding: 0 15px;
-    }
-  }
-}
-
-/* small phones grid*/
-@media (max-width: (475px)) {
-  @for $i from 1 through 12 {
-    .col-exs-#{$i} {
       @include grid-size(8.333333% * $i);
       padding: 0 15px;
     }
@@ -468,24 +438,18 @@ main {
       border-color: $darkBlue;
     }
   }
-}
-
-.btn-file {
-  color: $whiteColor;
-  width: 220px;
-  height: 36px;
-  padding: 3px 8px;
-  cursor: pointer;
-  @include transition(0.3);
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  &:before {
-    font-family: "icomoon";
-    content: "\e902";
-    color: #fefefe;
-    margin-right: 5px;
-    @include transition(0.3);
+  &-file {
+    background-color: $darkBlue;
+    color: $whiteColor;
+    background-image: url('../img/icon-file.png');
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center left 20px;
+    border-radius: 20px;
+    padding: 10px 33px 10px 50px;
+    &:hover {
+      background-color: $lightBlue;
+    }
   }
 }
 
@@ -581,7 +545,7 @@ main {
   & select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url('../img/icon-arrow-small.png');
+    background-image: url("../img/icon-arrow-small.png");
     background-repeat: no-repeat;
     background-size: 14px;
     background-position: center right 12px;
@@ -601,16 +565,18 @@ main {
   margin-top: 85px;
   display: flex;
   align-items: center;
-  & button {
-    width: 150px;
+  & button, & a {
+    white-space: nowrap;
+    min-width: 150px;
     height: 46px;
+    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid transparent;
     cursor: pointer;
     font-size: 16px;
-    @include transition(.3);
+    @include transition(0.3);
   }
   &__submit {
     background: $lightBlue;
@@ -621,7 +587,7 @@ main {
     }
   }
   &__cancel {
-    background: #F6F6F6;
+    background: #f6f6f6;
     color: $defaultText;
     &:hover {
       background: #dfdfdf;
@@ -637,14 +603,14 @@ main {
   width: fit-content;
   min-width: 210px;
   margin-top: 30px;
-  input[type=file] {
+  input[type="file"] {
     position: absolute;
     z-index: 1;
     height: 100%;
     width: 100%;
     opacity: 0;
     &:not(.empty):valid + label:before {
-      content: '';
+      content: "";
       display: block;
       cursor: pointer;
       z-index: 5;
@@ -655,7 +621,7 @@ main {
       top: 50%;
       transform: translate(0, -50%);
       z-index: 2;
-      background-image: url('../img/icon-remove.png');
+      background-image: url("../img/icon-remove.png");
       background-repeat: no-repeat;
       background-size: contain;
       color: #fff;
@@ -666,7 +632,7 @@ main {
       color: $lightBlue;
       text-decoration: underline;
       pointer-events: none;
-      background-image: url('../img/icon-attachment.png');
+      background-image: url("../img/icon-attachment.png");
     }
     &:invalid + label:after,
     &.empty + label:after {
@@ -679,10 +645,11 @@ main {
     width: 100%;
     height: 100%;
     margin: 0;
-    &:before, &:after {
+    &:before,
+    &:after {
       display: block;
-      text-overflow: ellipsis; 
-      overflow: hidden; 
+      text-overflow: ellipsis;
+      overflow: hidden;
       white-space: nowrap;
     }
     &:after {
@@ -696,7 +663,7 @@ main {
       align-items: center;
       font-weight: 400;
       content: attr(data-input-value);
-      background-image: url('../img/icon-file.png');
+      background-image: url("../img/icon-file.png");
       background-repeat: no-repeat;
       background-size: 15px;
       background-position: center left 18px;
@@ -707,7 +674,7 @@ main {
   }
 }
 #datepicker {
-  background-image: url('../img/icon-calendar.png');
+  background-image: url("../img/icon-calendar.png");
   background-repeat: no-repeat;
   background-size: 16px;
   background-position: center right 15px;
@@ -997,18 +964,20 @@ label {
   & form {
     margin-bottom: 45px;
   }
-  & .table-sort {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 26px;
-    & span {
-      font-size: 14px;
-    }
-    & p {
-      font-size: 14px;
-      color: $lightBlue;
-      font-weight: 700;
-    }
+}
+.table-sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26px;
+  & span {
+    font-size: 14px;
+    line-height: 1;
+  }
+  & p {
+    font-size: 14px;
+    color: $lightBlue;
+    font-weight: 700;
+    line-height: 1;
   }
 }
 .law-firm-account {
@@ -1114,7 +1083,7 @@ label {
     align-items: center;
     margin-bottom: 50px;
     padding-bottom: 30px;
-    border-bottom: 3px solid #F6F6F6;
+    border-bottom: 3px solid #f6f6f6;
   }
   &__name {
     & p {
@@ -1137,7 +1106,7 @@ label {
     }
     & .cards {
       &__item {
-        background: #F6F6F6;
+        background: #f6f6f6;
         padding: 20px;
         border: 2px solid transparent;
         height: 100%;
@@ -1162,7 +1131,48 @@ label {
       &__value {
         font-size: 18px;
       }
-    }   
+    }
+  }
+  &__expert_access {
+    margin-bottom: 60px;
+  }
+  &__file_funder {
+    margin-bottom: 50px;
+  }
+  &-table-helper {
+    font-size: 12px;
+    margin: 18px 0 50px 0;
+  }
+  &-table-addition {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & p {
+      margin-right: 20px;
+      width: 65%;
+    }
+  }
+  & .form-buttons {
+    margin-bottom: 80px;
+  }
+  & .file_funder_header {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 12px;
+    & h2 {
+      margin-bottom: 0;
+      line-height: 1;
+    }
+    & a {
+      margin-left: 18px;
+      line-height: 1;
+      color: $lightBlue;
+      @include transition(.3);
+      border-bottom: 1px solid $lightBlue;
+      &:hover {
+        border-color: transparent;
+      }
+    }
   }
 }
 .print-page {
@@ -1181,9 +1191,97 @@ label {
     color: $lightBlue;
     line-height: 1.2;
     border-bottom: 1px solid $lightBlue;
-    @include transition(.3);
+    @include transition(0.3);
   }
 }
+.file-details {
+  & .table {
+    & th {
+      cursor: pointer;
+      color: $defaultText;
+      padding-top: 20px;
+      font-size: 14px;
+      & label:before {
+        border-width: 2px;
+        margin-right: 15px;
+      }
+    }
+    & td {
+      font-size: 14px;
+    }
+    & a {
+      color: $lightBlue;
+      line-height: 0.6;
+      text-decoration: underline;
+      @include transition(0.3);
+      margin-left: 15px;
+      &:hover {
+        color: $darkBlue;
+      }
+    }
+    & tbody tr:first-child td {
+      padding-top: 15px;
+    }
+    & tbody tr:last-child td {
+      padding-bottom: 20px;
+    }
+    & thead {
+      border-top: 3px solid #f6f6f6;
+      border-bottom: none;
+    }
+    & tfoot td {
+      padding: 15px 0;
+      border-bottom: 1px solid #d1d1d1;
+    }
+    & input {
+      padding: 0;
+      height: initial;
+      width: initial;
+      margin-bottom: 0;
+      display: none;
+      &:checked + label:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 6px;
+        width: 5px;
+        height: 10px;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+        border: solid #ffffff;
+        border-width: 0 2px 2px 0;
+      }
+      &:checked + label:before {
+        background: $darkBlue;
+        border-color: $darkBlue;
+      }
+    }
+    & label {
+      position: relative;
+      margin: 0;
+      cursor: pointer;
+      &:before {
+        content: "";
+        -webkit-appearance: none;
+        padding: 7px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        margin: 0 0 3px 0;
+        background-color: transparent;
+        border: 1px solid #555555;
+        cursor: pointer;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+      }
+      &:after {
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
 // NEW FUNDING REQUEST PAGE
 .funding-request {
   &__header {
@@ -1209,7 +1307,7 @@ label {
     }
     & label {
       & span {
-        color: #FF0000;
+        color: #ff0000;
       }
       & small {
         font-size: 14px;
@@ -1218,11 +1316,11 @@ label {
   }
   &-add {
     padding-top: 30px;
-    border-top: 1px solid #D1D1D1;
+    border-top: 1px solid #d1d1d1;
     & .add-funding {
       color: $lightBlue;
       border-bottom: 1px solid $lightBlue;
-      @include transition(.3);
+      @include transition(0.3);
       cursor: pointer;
       &:hover {
         border-color: transparent;
@@ -1231,7 +1329,7 @@ label {
   }
 }
 .upload-helper {
-  margin: 15px 0 0 40px;
+  margin: 30px 0 0 40px;
   font-size: 14px;
 }
 .form-disbursement {
@@ -1243,7 +1341,7 @@ label {
     margin-bottom: 50px;
   }
 }
-// EXPERT ACCESS STATUS UPDATE PAGE 
+// EXPERT ACCESS STATUS UPDATE PAGE
 .status-update-expert {
   &__header {
     align-items: flex-end;
@@ -1271,7 +1369,8 @@ label {
       flex-direction: column;
       align-items: flex-end;
     }
-    & .section-subtitle, & h1 {
+    & .section-subtitle,
+    & h1 {
       margin: 0;
       line-height: 1;
     }
@@ -1303,7 +1402,7 @@ label {
       &-total {
         margin-top: 20px;
         padding-top: 20px;
-        border-top: 1px solid #D1D1D1;
+        border-top: 1px solid #d1d1d1;
         & .information__value {
           font-weight: 700;
         }
@@ -1332,7 +1431,7 @@ label {
           border: 2px solid transparent;
           cursor: pointer;
           font-size: 16px;
-          @include transition(.3);
+          @include transition(0.3);
           background: $lightBlue;
           color: $whiteColor;
           margin-right: 10px;
@@ -1343,7 +1442,6 @@ label {
       }
     }
   }
-
 }
 // MEDIA QUERIES
 @media (max-width: 1200px) {
@@ -1431,6 +1529,16 @@ label {
   .transaction-details__image {
     width: 200px;
   }
+  .file-details {
+    & .table {
+      & td {
+        font-size: 12px;
+      }
+      & th:first-child {
+        white-space: nowrap;
+      }
+    }
+  }
 }
 @media (max-width: 767px) {
   .heading-1 {
@@ -1463,8 +1571,9 @@ label {
       &_link {
         font-size: 16px;
         margin: 0;
-        &:before, &:after {
-          content: '';
+        &:before,
+        &:after {
+          content: "";
           position: absolute;
           left: -50px;
           top: 50%;
@@ -1481,7 +1590,6 @@ label {
         }
       }
     }
-
   }
   .table thead {
     border: none;
@@ -1489,7 +1597,7 @@ label {
   .account-overview form {
     margin-bottom: 0;
   }
-  .account-overview form .col-xs-12{
+  .account-overview form .col-xs-12 {
     margin-bottom: 20px;
   }
   thead tr {
@@ -1538,6 +1646,12 @@ label {
     width: 100%;
     line-height: 1.4;
   }
+  .table-sort {
+    margin-bottom: 20px;
+    & span {
+      display: none;
+    }
+  }
   .table tbody tr:first-child td {
     padding: 5px 10px 5px 110px;
   }
@@ -1579,7 +1693,8 @@ label {
       margin-bottom: 15px;
     }
   }
-  .upload, .upload-helper {
+  .upload,
+  .upload-helper {
     margin-top: 15px;
   }
   .upload-helper {
@@ -1609,7 +1724,8 @@ label {
     &-header {
       position: relative;
       margin-bottom: 30px;
-      & .section-subtitle, & h1{
+      & .section-subtitle,
+      & h1 {
         text-align: center;
         margin: 10px 0;
       }
@@ -1641,6 +1757,60 @@ label {
       & .information-back {
         margin-top: 50px;
       }
+    }
+  }
+  .file-details {
+    &__header {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+    &-cards {
+      margin: 30px -15px 0 -15px;
+      & .cards {
+        &__heading {
+          font-size: 14px;
+        }
+        &__value {
+          font-size: 14px;
+        }
+      }
+    }
+    & .table {
+      & td {
+        font-size: 14px;
+        padding: 5px 10px 5px 130px;
+        &:before {
+          width: 130px;
+        }
+        &:after {
+          left: 110px;
+        }
+      }
+      & th:first-child {
+        white-space: nowrap;
+      }
+      & tbody tr:first-child td,
+      & tbody tr:last-child td,
+      & tfoot td {
+        padding: 5px 10px 5px 130px;
+      }
+      & tfoot td {
+        border: none;
+      }
+    }
+    &-table-addition {
+      flex-direction: column;
+      align-items: flex-start;
+      & p {
+        margin: 0 0 20px 0;
+        width: 100%;
+      }
+    }
+    &-table-helper {
+      margin: 15px 0 30px 0;
+    }
+    & .form-buttons {
+      margin: 50px 0 50px 0;
     }
   }
 }
