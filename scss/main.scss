@@ -595,64 +595,40 @@ main {
   }
 }
 .upload {
+  display: flex;
+  align-items: center;
   position: relative;
-  display: block;
   width: 210px;
   height: 40px;
-  cursor: pointer;
-  width: fit-content;
   min-width: 210px;
   margin-top: 30px;
-  input[type="file"] {
+  cursor: pointer;
+  width: fit-content;
+  & .remove {
+    display: block;
+    background-image: url("../img/icon-remove.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: -30px;
+    display: none;
+  }
+  & input[type="file"] {
     position: absolute;
     z-index: 1;
     height: 100%;
     width: 100%;
     opacity: 0;
-    &:not(.empty):valid + label:before {
-      content: "";
-      display: block;
-      cursor: pointer;
-      z-index: 5;
-      position: absolute;
-      right: -25px;
-      width: 18px;
-      height: 18px;
-      top: 50%;
-      transform: translate(0, -50%);
-      z-index: 2;
-      background-image: url("../img/icon-remove.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      color: #fff;
-      text-align: center;
-    }
-    &:not(.empty):valid + label:after {
-      background-color: $whiteColor;
-      color: $lightBlue;
-      text-decoration: underline;
-      pointer-events: none;
-      background-image: url("../img/icon-attachment.png");
-    }
-    &:invalid + label:after,
-    &.empty + label:after {
-      content: attr(data-drag-text);
-    }
   }
-
-  label {
-    color: #fff;
+  & label {
     width: 100%;
     height: 100%;
     margin: 0;
-    &:before,
+    padding: 0;
     &:after {
-      display: block;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    &:after {
+      content: 'Upload Attachment';
       position: relative;
       width: 100%;
       height: 100%;
@@ -662,7 +638,6 @@ main {
       display: flex;
       align-items: center;
       font-weight: 400;
-      content: attr(data-input-value);
       background-image: url("../img/icon-file.png");
       background-repeat: no-repeat;
       background-size: 15px;
@@ -670,6 +645,18 @@ main {
       padding: 0 0 0 45px;
       z-index: 3;
       cursor: pointer;
+    }
+    &.active {
+      &:after {
+        content: attr(data-input-value);
+        background-color: transparent;
+        color: $lightBlue;
+        text-decoration: underline;
+        background-image: url("../img/icon-attachment.png");
+      }
+      & ~ .remove {
+        display: block;
+      }
     }
   }
 }
@@ -1699,6 +1686,14 @@ label {
   }
   .upload-helper {
     font-size: 11px;
+  }
+  .upload {
+    min-width: 190px;
+    & label:after {
+      max-width: 280px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
   }
   .status-update-expert {
     &__image {

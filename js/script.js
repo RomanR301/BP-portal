@@ -63,10 +63,8 @@ let front = {
               null;
           }
       });
-   
       // Get all triggers
       const checkAll = document.querySelectorAll('[data-checkall-trigger]');
-      
       // Check / Uncheck all matching checkboxes
       function toggleCheckboxGroup (checked, checkboxGroup) {
         let matchingCheckboxes = document.querySelectorAll('[data-checkall-group="'+ checkboxGroup +'"]');
@@ -75,8 +73,7 @@ let front = {
             el.checked = !el.checked; 
           }
         });
-      };
-      
+      };  
       // Get all checkboxes of a group
       checkAll.forEach(function(el){
         el.addEventListener('change', function(){
@@ -85,131 +82,55 @@ let front = {
           toggleCheckboxGroup(checked, checkboxGroup); 
         });
       });
-
-  },
-  addFields: function() {
-    // for (let i = 0;i++;){
-    //     return i
-    // }
-    // console.log(i)
-    let formElement = `
-    <div class="row form-disbursement">
-    <div class="col-md-4 col-xs-12">
-      <label for="funding-request-amount-requested">Amount Requested<span>*</span></label>
-      <div class="form-group">
-        <input type="text" name="funding-request-amount-requested_1" id="funding-request-amount-requested_1"
-          required>
-      </div>
-    </div>
-    <div class="col-md-8 col-xs-12">
-      <label for="funding-request-description">Description <small>(maximum 100 characters)</small></label>
-      <div class="form-group">
-        <input type="text" name="funding-request-description-1" id="funding-request-description-1" maxlength="100">
-      </div>
-    </div>
-    <div class="col-xs-12 d-flex align-items-center">
-      <div class="upload">
-        <input id="upload_2" type="file" name="upload_2" class="empty">
-        <label for="upload_2" data-input-value="" data-select-text="Select file" data-remove-text="Remove file"
-          data-drag-text="Upload Attachment">
-        </label>
-      </div>
-      <span class="upload-helper">(i.e. invoice)</span>
-    </div>
-  </div>
-  `
-    $(formElement).insertBefore('.funding-request-add')
-}
+  }
 
 };
 
 
 jQuery(function () {
   front.init();
-});
-$(document).ready(function(){
-    // $('.upload input[type=file]').each(function () {
-    //     var eventNamespace = '.upload';
-    //     var labelInputValueAttr = 'data-input-value';
-    //     var $input = $(this);
-    //     var $inputClone = $input.clone(true,true);
-    //     $inputClone.removeClass('empty');
-    //     var $label = $input.next('label');
-    //     var setLabelInputValue = function () {
-    //         var $input = $(this);
-    //         if($input.val() && $input.val() !== ''){
-    //         $input.removeClass('empty');
-    //         $label.attr(labelInputValueAttr, $input.val().split('\\').pop());
-    //         } else {
-    //         $label.attr(labelInputValueAttr, '');
-    //         $input.addClass('empty');
-    //         }
-    //     }
-    //     if(!$input.val() || $input.val() === ''){
-    //         $input.addClass('empty');
-    //     }
-    //     $label.attr(labelInputValueAttr,'');
-    //     $input.on('change' + eventNamespace, setLabelInputValue);
-    //     $label.on('click' + eventNamespace, function (event) {
-    //         if($input.val() && $input.val() !== '' && $input.is(':valid')){
-    //         event.preventDefault();
-    //         $input.remove();
-    //         $label.before($inputClone); // cant just empty val because of ie
-    //         $input = $inputClone;
-    //         if(!$input.val() || $input.val() === ''){
-    //             $input.addClass('empty');
-    //         }
-    //         $inputClone = $input.clone(true,true);
-    //         $inputClone.removeClass('empty');
-    //         $input.off('change' + eventNamespace);
-    //         $input.on('change' + eventNamespace, setLabelInputValue);
-    //         $label.attr(labelInputValueAttr,'');
-    //         }
-    //     });
-    // });
+  let i = 1;
+  $(document).on('click', '.add-funding', function (e) {
+    e.preventDefault()
+    i++
+    let formElement = `
+        <div class="row form-disbursement">
+      <div class="col-md-4 col-xs-12">
+        <label for="funding-request-amount-requested-${i}">Amount Requested<span>*</span></label>
+        <div class="form-group">
+          <input type="text" name="funding-request-amount-requested-${i}" id="funding-request-amount-requested-${i}"
+            required>
+        </div>
+      </div>
+      <div class="col-md-8 col-xs-12">
+        <label for="funding-request-description-${i}">Description <small>(maximum 100 characters)</small></label>
+        <div class="form-group">
+          <input type="text" name="funding-request-description-${i}" id="funding-request-description-${i}" maxlength="100">
+        </div>
+      </div>
+      <div class="col-xs-12 d-flex align-items-center">
+        <div class="upload">
+          <input id="upload-${i}" type="file" name="upload-${i}">
+          <label for="upload-${i}" data-input-value="">
+          </label>
+          <span class="remove"></span>
+        </div>
+        <span class="upload-helper">(i.e. invoice)</span>
+      </div>
+    </div>`
+    $(formElement).insertBefore('.funding-request-add')
   });
+  $(document).on('change', '.upload input', function(){
+    let name = this.files[0].name;
+    $(this).next('label').attr('data-input-value', name).addClass('active');
+    $(this).parent().parent().find('.upload-helper').hide()
+  })
+  $(document).on('click', '.remove', function (e) {
+    $(this).parent().find('input').val('');
+    $(this).prev('label').attr('data-value-name', '').removeClass('active');
+    $(this).parent().parent().find('.upload-helper').show()
+  })
+});
 
 
-  $(function() {
-    $('.upload input[type=file]').each(function () {
-        var eventNamespace = '.upload';
-        var labelInputValueAttr = 'data-input-value';
-        var $input = $(this);
-        var $inputClone = $input.clone(true,true);
-        $inputClone.removeClass('empty');
-        var $label = $input.next('label');
-        var setLabelInputValue = function () {
-            var $input = $(this);
-            if($input.val() && $input.val() !== ''){
-            $input.removeClass('empty');
-            $label.attr(labelInputValueAttr, $input.val().split('\\').pop());
-            } else {
-            $label.attr(labelInputValueAttr, '');
-            $input.addClass('empty');
-            }
-        }
-        if(!$input.val() || $input.val() === ''){
-            $input.addClass('empty');
-        }
-        $label.attr(labelInputValueAttr,'');
-        $input.on('change' + eventNamespace, setLabelInputValue);
-        $label.on('click' + eventNamespace, function (event) {
-            if($input.val() && $input.val() !== '' && $input.is(':valid')){
-            event.preventDefault();
-            $input.remove();
-            $label.before($inputClone); // cant just empty val because of ie
-            $input = $inputClone;
-            if(!$input.val() || $input.val() === ''){
-                $input.addClass('empty');
-            }
-            $inputClone = $input.clone(true,true);
-            $inputClone.removeClass('empty');
-            $input.off('change' + eventNamespace);
-            $input.on('change' + eventNamespace, setLabelInputValue);
-            $label.attr(labelInputValueAttr,'');
-            }
-        });
-    })
-    front.addFields();
 
-   });
