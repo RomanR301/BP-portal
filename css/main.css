@@ -1138,6 +1138,7 @@ label {
   margin-left: 30px;
   color: #555555;
   line-height: 1;
+  font-size: 14px;
 }
 
 .footer-copyright a:before {
@@ -1152,6 +1153,7 @@ label {
 
 .footer-copyright p {
   color: #6d7278;
+  font-size: 14px;
 }
 
 .account-overview .tabs {
@@ -1265,6 +1267,18 @@ label {
   width: 40%;
 }
 
+.law-firm-account .table th:nth-child(4) {
+  padding-left: 30px;
+}
+
+.law-firm-account .table td:last-child {
+  text-align: right;
+}
+
+.law-firm-account .table .file-details {
+  margin-left: 50px;
+}
+
 .table {
   width: 100%;
 }
@@ -1312,7 +1326,7 @@ label {
   width: 20%;
 }
 
-.account-overview table .funding-request {
+.account-overview table .funding-request, .account-overview table .file-details {
   white-space: nowrap;
   margin-left: 25px;
   color: #009ade;
@@ -1320,8 +1334,23 @@ label {
   transition: all 0.3s ease-out;
 }
 
-.account-overview table .funding-request:hover {
+.account-overview table .funding-request:hover, .account-overview table .file-details:hover {
   border-color: transparent;
+}
+
+.account-overview table .file-details {
+  color: #014f82;
+  border-bottom: 1px solid #014f82;
+}
+
+.account-overview-summary .table th, .account-overview-summary .table td {
+  text-align: right;
+  width: 22.25%;
+}
+
+.account-overview-summary .table th:first-child, .account-overview-summary .table td:first-child {
+  text-align: left;
+  width: 12%;
 }
 
 .file-details__header {
@@ -1518,7 +1547,7 @@ label {
   content: "";
   display: block;
   position: absolute;
-  top: 5px;
+  top: 4px;
   left: 6px;
   width: 5px;
   height: 10px;
@@ -1556,6 +1585,23 @@ label {
 
 .file-details .table label:after {
   transition: all 0.3s ease-in-out;
+}
+
+.file-details .table .align-right {
+  text-align: right;
+  padding-right: 0;
+  width: 100px;
+}
+
+.file-details .table tr th:nth-child(6),
+.file-details .table tr td:nth-child(6),
+.file-details .table tfoot tr td:nth-child(2) {
+  padding-left: 0;
+}
+
+.file-details .table th, .file-details table td {
+  padding-right: 20px;
+  padding-left: 10px;
 }
 
 .funding-request__header {
@@ -1612,7 +1658,7 @@ label {
 }
 
 .upload-helper {
-  margin: 30px 0 0 40px;
+  margin: 30px 0 0 20px;
   font-size: 14px;
 }
 
@@ -1624,6 +1670,10 @@ label {
   margin-bottom: 50px;
 }
 
+.mb-negative-10 {
+  margin-bottom: -10px;
+}
+
 .status-update-expert__header {
   align-items: flex-end;
   margin-bottom: 50px;
@@ -1632,6 +1682,11 @@ label {
 .status-update-expert__header h1 {
   margin-bottom: 0;
   text-align: right;
+  line-height: .9;
+}
+
+.status-update-expert__header .section-subtitle {
+  line-height: .9;
 }
 
 .status-update-expert__image {
@@ -1661,7 +1716,7 @@ label {
 .transaction-details-header .section-subtitle,
 .transaction-details-header h1 {
   margin: 0;
-  line-height: 1;
+  line-height: .9;
 }
 
 .transaction-details-header h1 {
@@ -1744,6 +1799,36 @@ label {
 
 .transaction-details__information .information-back a:hover {
   background: #014f82;
+}
+
+@media (max-width: 1200px) {
+  .account-overview-summary .table th, .account-overview-summary .table td {
+    text-align: right;
+    width: 20%;
+  }
+  .account-overview-summary .table th:first-child, .account-overview-summary .table td:first-child {
+    text-align: left;
+    width: 20%;
+  }
+  .law-firm-account .table .file-details {
+    margin-left: 20px;
+  }
+  .law-firm-account .table th:nth-child(4) {
+    padding-left: 0;
+    text-align: right;
+  }
+}
+
+@media (max-width: 1070px) {
+  .file-details .table .align-right {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .file-details .table th, .file-details table td {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -1896,6 +1981,17 @@ label {
   .account-overview form .col-xs-12 {
     margin-bottom: 20px;
   }
+  .account-overview-summary .table th, .account-overview-summary .table td {
+    text-align: left;
+    width: 100%;
+  }
+  .account-overview-summary .table th:first-child, .account-overview-summary .table td:first-child {
+    text-align: left;
+    width: 100%;
+  }
+  .account-overview-summary .table .funding-request {
+    margin-left: 0;
+  }
   thead tr {
     position: absolute;
     top: -9999px;
@@ -1973,6 +2069,13 @@ label {
   .table tfoot td:first-child:after {
     display: none;
   }
+  .file-details .table .align-right {
+    text-align: left;
+    width: 100%;
+  }
+  .file-details .table tr th:nth-child(6), .file-details .table tr td:nth-child(6), .file-details .table tfoot tr td:nth-child(2) {
+    padding: 5px 10px 5px 130px;
+  }
   .law-firm-account .table td:nth-child(3) {
     padding: 5px 10px 5px 110px;
   }
@@ -1988,6 +2091,9 @@ label {
   }
   .funding-request .form-group {
     margin-bottom: 15px;
+  }
+  .law-firm-account .table td:last-child {
+    text-align: left;
   }
   .upload,
   .upload-helper {
@@ -2104,6 +2210,15 @@ label {
   }
   .file-details .form-buttons {
     margin: 50px 0 50px 0;
+  }
+  .print-page {
+    display: none;
+  }
+  .status-update-expert__header h1 {
+    margin: 10px 0;
+  }
+  .funding-request__header h1 {
+    margin-top: 10px;
   }
 }
 
