@@ -85,55 +85,99 @@
         <div class="section-subtitle">Account balance summary and account details by funding type.</div>
         <ul class="tabs-list tabs-ul">
           <li class="tabs-list__item">
-            <a href="account-overview.html" class="tabs-list__item_link active">Summary</a>
+            <a href="account-overview.html" class="tabs-list__item_link">Summary</a>
           </li>
           <li class="tabs-list__item">
-            <a href="law-firm-account-overview.html" class="tabs-list__item_link">Law Firm
+            <a href="law-firm-account-overview.html" class="tabs-list__item_link active">Law Firm
               Accounts</a>
           </li>
           <li class="tabs-list__item">
-            <a href="law-firm-account-overview.html" class="tabs-list__item_link">Plaintiff Accounts</a>
+            <a href="#" class="tabs-list__item_link">Plaintiff Accounts</a>
           </li>
         </ul>
-        <div class="account-overview-summary">
+        <div class="law-firm-account">
+          <h2 class="heading-2">Law Firm Account Statement</h2>
+          <form action="" class="row">
+            <div class="col-md-4 col-xs-12">
+              <label for="law-firm-account-search">Search by File or Plaintiff:</label>
+              <div class="form-group">
+                <input type="search" name="law-firm-account-search" id="law-firm-account-search"
+                  placeholder="File Number or Plaintiff Name">
+                <button type="submit">
+                  <i class="icon icon-search"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+              <label for="datepicker">Account balance as of:</label>
+              <div class="form-group">
+                <input type="text" name="law-firm-account-balance" id="datepicker" size="30" placeholder="31-Mar-2021">
+              </div>
+            </div>
+          </form>
+          <div class="table-sort">
+            <span>Click on column headings to sort</span>
+            <p>Files: 6</p>
+          </div>
           <table class="table">
             <thead>
               <tr>
-                <th>Account Type</th>
-                <th>Authorized</th>
-                <th>Utilized</th>
-                <th>Pending</th>
-                <th>Available</th>
-                <th></th>
+                <th>File Number <i class="icon icon-arrow"></i></th>
+                <th>Plaintiff</th>
+                <th>Case Status</th>
+                <th>Balance</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-column="Account Type">Expert Access</td>
-                <td data-column="Authorized">$100,000.00</td>
-                <td data-column="Utilized">$50,000.00</td>
-                <td data-column="Pending">$10,000.00</td>
-                <td data-column="Available">$40,000.00</td>
+                <td data-column="File Number">70652</td>
+                <td data-column="Plaintiff">Maxwell, David</td>
+                <td data-column="Case Status">
+                  <p>Case was abandoned/lost</p> <a href="case-status-update.html"><i class="icon icon-pencil"></i></a>
+                </td>
+                <td data-column="Balance">$18,000.00 <a class="file-details" href="file-details.html">File Details</a></td>
               </tr>
               <tr>
-                <td data-column="Account Type">File Funder</td>
-                <td data-column="Authorized">$50,000.00</td>
-                <td data-column="Utilized">$25,000.00</td>
-                <td data-column="Pending">$5,000.00</td>
-                <td data-column="Available">$20,000.00</td>
-                <td><a class="funding-request" href="new-funding-request.html">New
-                    Funding Request</a></td>
+                <td data-column="File Number">70653</td>
+                <td data-column="Plaintiff">Marchand, Bradley</td>
+                <td data-column="Case Status">
+                  <p>Case Settled</p> <a href="case-status-update.html"><i class="icon icon-pencil"></i></a>
+                </td>
+                <td data-column="Balance">$18,000.00 <a class="file-details" href="file-details.html">File Details</a></td>
+              </tr>
+              <tr>
+                <td data-column="File Number">70654</td>
+                <td data-column="Plaintiff">Ovechkin, Alexis</td>
+                <td data-column="Case Status">
+                  <p>Case was abandoned/lost</p> <a href="case-status-update.html"><i class="icon icon-pencil"></i></a>
+                </td>
+                <td data-column="Balance">$18,000.00 <a class="file-details" href="file-details.html">File Details</a></td>
+              </tr>
+              <tr>
+                <td data-column="File Number">70655</td>
+                <td data-column="Plaintiff">Pachoretti, Maxwell</td>
+                <td data-column="Case Status">
+                  <p>Case was abandoned/lost</p> <a href="case-status-update.html"><i class="icon icon-pencil"></i></a>
+                </td>
+                <td data-column="Balance">$18,000.00 <a class="file-details" href="file-details.html">File Details</a></td>
+              </tr>
+              <tr>
+                <td data-column="File Number">70656</td>
+                <td data-column="Plaintiff">Vohn, Lindsay</td>
+                <td data-column="Case Status">
+                  <p>Case Settled</p> <a href="case-status-update.html"><i class="icon icon-pencil"></i></a>
+                </td>
+                <td data-column="Balance">$18,000.00 <a class="file-details" href="file-details.html">File Details</a></td>
+              </tr>
+              <tr>
+                <td data-column="File Number">70657</td>
+                <td data-column="Plaintiff">Theodore, Shea</td>
+                <td data-column="Case Status">
+                  <p>Case Settled</p> <a href="case-status-update.html"><i class="icon icon-pencil"></i></a>
+                </td>
+                <td data-column="Balance">$18,000.00 <a class="file-details" href="file-details.html">File Details</a></td>
               </tr>
             </tbody>
-            <tfoot>
-              <tr>
-                <td data-column="">Total</td>
-                <td data-column="Authorized">$150,000.00</td>
-                <td data-column="Utilized">$150,000.00</td>
-                <td data-column="Pending">$15,000.00</td>
-                <td data-column="Available">$15,000.00</td>
-              </tr>
-            </tfoot>
           </table>
         </div>
       </div>

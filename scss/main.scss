@@ -492,27 +492,6 @@ main {
       }
     }
   }
-  &-wrap {
-    .tab-content {
-      display: none;
-      animation: fadeEffect 0.5s;
-      &.is-show {
-        display: block;
-      }
-      &.active {
-        display: block;
-      }
-    }
-  }
-}
-
-@keyframes fadeEffect {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 // FORMS
 .form-group {
@@ -903,8 +882,12 @@ label {
 }
 // ACCOUNT OVERVIEW SCREEN
 .account-overview {
+  margin-bottom: 110px;
   & .tabs {
-    margin: 50px 0 110px 0;
+    margin: 50px 0 0 0;
+    &-list {
+      margin-top: 40px;
+    }
   }
   &-additional {
     background: #f6f6f6;
@@ -1624,8 +1607,11 @@ label {
       font-size: 14px;
     }
   }
-  .account-overview .tabs {
-    margin: 30px 0 50px 0;
+  .account-overview  {
+    margin-bottom: 50px;
+    & .tabs-list {
+      margin-top: 30px;
+    }
   }
   .tabs-list {
     margin-bottom: 10px;

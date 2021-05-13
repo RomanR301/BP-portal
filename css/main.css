@@ -646,38 +646,6 @@ main {
   opacity: 1;
 }
 
-.tabs-wrap .tab-content {
-  display: none;
-  -webkit-animation: fadeEffect 0.5s;
-          animation: fadeEffect 0.5s;
-}
-
-.tabs-wrap .tab-content.is-show {
-  display: block;
-}
-
-.tabs-wrap .tab-content.active {
-  display: block;
-}
-
-@-webkit-keyframes fadeEffect {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeEffect {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .form-group {
   width: 100%;
   position: relative;
@@ -1156,8 +1124,16 @@ label {
   font-size: 14px;
 }
 
+.account-overview {
+  margin-bottom: 110px;
+}
+
 .account-overview .tabs {
-  margin: 50px 0 110px 0;
+  margin: 50px 0 0 0;
+}
+
+.account-overview .tabs-list {
+  margin-top: 40px;
 }
 
 .account-overview-additional {
@@ -1939,8 +1915,11 @@ label {
     padding-right: 6px;
     font-size: 14px;
   }
-  .account-overview .tabs {
-    margin: 30px 0 50px 0;
+  .account-overview {
+    margin-bottom: 50px;
+  }
+  .account-overview .tabs-list {
+    margin-top: 30px;
   }
   .tabs-list {
     margin-bottom: 10px;
